@@ -1,0 +1,5 @@
+# Fuel to Function by Ana Yepez
+User-agent: *
+Allow: /
+
+Sitemap: https://fueltofunction.mx/sitemap.xml
