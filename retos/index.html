@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Retos de entrenamiento | Fuel to Function</title>
-<meta name="description" content="Programas con inicio y fin para ganar fuerza y construir hábitos. Próximamente.">
+<title>Retos de nutrición y entrenamiento | Fuel to Function</title>
+<meta name="description" content="Tres retos con Ana Yepez: 30 días de comida real, 65 días de fuerza funcional y 120 días de nutrición y entrenamiento juntos. Sin dietas restrictivas.">
 <meta name="robots" content="noindex, follow">
 
 <link rel="canonical" href="https://fueltofunction.mx/retos/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="Fuel to Function by Ana Yepez">
-<meta property="og:title" content="Retos de entrenamiento | Fuel to Function">
-<meta property="og:description" content="Programas con inicio y fin para ganar fuerza y construir hábitos. Próximamente.">
+<meta property="og:title" content="Retos de nutrición y entrenamiento | Fuel to Function">
+<meta property="og:description" content="Tres retos con Ana Yepez: 30 días de comida real, 65 días de fuerza funcional y 120 días de nutrición y entrenamiento juntos. Sin dietas restrictivas.">
 <meta property="og:url" content="https://fueltofunction.mx/retos/">
 <meta property="og:image" content="https://fueltofunction.mx/img/ana-accion.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -403,7 +403,87 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
 .drawer .foot{padding:18px 22px;border-top:4px solid var(--ink);display:flex;flex-direction:column;gap:12px}
 .drawer .total{display:flex;justify-content:space-between;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
 .drawer .note{font-size:13px;color:var(--ink-2);margin:0}
-.about h1{margin:0;font-size:clamp(56px,7vw,112px)}</style>
+.about h1{margin:0;font-size:clamp(56px,7vw,112px)}
+/* ---------- retos ---------- */
+section[id]{scroll-margin-top:100px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.labels.tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+.labels.tres .label:nth-child(n){margin-top:0}
+.labels.tres .label:nth-child(2){margin-top:28px}
+.label .price b.soon{font-size:clamp(34px,3vw,44px)}
+.label .sticker span{display:block}
+@media (max-width:1100px){.labels.tres{grid-template-columns:1fr;max-width:560px}.labels.tres .label:nth-child(n){margin-top:0}}
+.r30{background:var(--white);border-block:2px solid var(--rule)}
+.r65{background:var(--azul-100)}
+.r120{background:var(--paper)}
+.sub{margin:56px 0 16px;font-size:clamp(34px,3.4vw,52px)}
+/* plato */
+.plato{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:2px solid var(--ink);margin-bottom:32px}
+.pl{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;min-width:0;font-size:14px;line-height:1.35}
+.pl + .pl{border-left:2px solid var(--ink)}
+.pl b{font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(28px,2.6vw,38px);line-height:.95}
+.pl.ver{background:var(--celeste)}.pl.pro{background:var(--rosa)}.pl.car{background:var(--amarillo)}.pl.gra{background:var(--paper)}
+@media (max-width:860px){.plato{grid-template-columns:1fr 1fr}.pl:nth-child(3){border-left:0}.pl:nth-child(n+3){border-top:2px solid var(--ink)}}
+@media (max-width:420px){.plato{grid-template-columns:1fr}.pl + .pl{border-left:0;border-top:2px solid var(--ink)}}
+/* semanas como paneles de etiqueta */
+.wkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px;align-items:start}
+.wk{background:var(--paper);border:2px solid var(--ink);padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;position:relative;min-width:0}
+.wk .t{font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:40px;line-height:.9}
+.wk .bar{height:8px;background:var(--ink);margin-block:4px}
+.wk ol{list-style:none;margin:0;padding:0}
+.wk li{display:grid;grid-template-columns:56px 1fr;gap:8px;border-top:1px solid var(--ink);padding-block:7px;font-size:14px;line-height:1.35}
+.wk li b{font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:13px}
+.wk-fin{background:var(--rosa)}
+.wk-fin .oct{--s:96px;margin:14px 0 0 auto}
+.rnotes{margin-top:48px}
+.rnotes ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15px;display:grid;gap:4px}
+.rnotes ul.tick{list-style:none;padding-left:0}
+.rnotes ul.tick li{position:relative;padding-left:28px}
+.rnotes ul.tick li::before{content:"";position:absolute;left:0;top:3px;width:16px;height:16px;border:2px solid var(--ink);background:var(--white)}
+/* entrenamiento */
+.r65 .uso figure{background:var(--white)}
+.moves{display:flex;flex-wrap:wrap;gap:8px}
+.moves span{border:1.5px solid var(--ink);border-radius:999px;padding:10px 16px;background:var(--white);font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:13px;line-height:1}
+.sesgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}
+.ses{background:var(--white);border:2px solid var(--ink);border-top-width:8px;padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.ses b{font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:26px;line-height:.95}
+.ses ul{margin:6px 0 0;padding-left:18px;font-size:14px;color:var(--ink-2)}
+.ses.f{background:var(--rosa)}.ses.p{background:var(--amarillo)}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px)}
+.cols2 .spec{background:transparent}
+@media (max-width:860px){.cols2{grid-template-columns:1fr}}
+/* fases del 120 */
+.fases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:clamp(48px,6vw,88px)}
+.fase{background:var(--white);border:2px solid var(--ink);padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.fase:nth-child(1){box-shadow:6px 6px 0 var(--rosa)}.fase:nth-child(2){box-shadow:6px 6px 0 var(--amarillo)}.fase:nth-child(3){box-shadow:6px 6px 0 var(--celeste)}.fase:nth-child(4){box-shadow:6px 6px 0 var(--ink)}
+.fase .t{font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(32px,2.8vw,42px);line-height:.9}
+.fase .bar{height:8px;background:var(--ink)}
+.fase .r{display:grid;gap:2px;border-top:1px solid var(--ink);padding-top:6px;font-size:14px;line-height:1.35}
+.fase .r span:first-child{font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:12px}
+.fase .hito{margin:auto 0 0;background:var(--rosa);border-top:4px solid var(--ink);padding:8px 10px;font-size:14px;line-height:1.35}
+@media (max-width:1100px){.fases{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.fases{grid-template-columns:1fr}}
+.r120-about{align-items:center}
+/* comparativa */
+.cmp-wrap{overflow-x:auto;border:2px solid var(--ink);background:var(--white)}
+.cmp{width:100%;min-width:640px;border-collapse:collapse;font-size:15px}
+.cmp th,.cmp td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--ink)}
+.cmp thead th{border-bottom:8px solid var(--ink);font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:24px;line-height:1}
+.cmp tbody th{font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:12px;width:18%}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp td + td,.cmp th + th,.cmp th + td{border-left:1px solid var(--ink)}
+/* preguntas */
+.qa-sec{padding-top:0}
+.qa{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);column-gap:32px}
+.qa details{border-bottom:1px solid var(--ink)}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding-block:16px;font-stretch:75%;font-weight:700;font-size:19px;line-height:1.2}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-stretch:62%;font-weight:900;font-size:30px;line-height:.7;color:var(--acento)}
+.qa details[open] summary::after{content:"–"}
+.qa details p{margin:0 0 16px;color:var(--ink-2);max-width:60ch}
+@media (max-width:860px){.qa{grid-template-columns:1fr}}
+.aviso{margin:40px 0 0;border:2px solid var(--ink);background:var(--amarillo);padding:14px 16px;font-size:14px;line-height:1.45;max-width:980px}
+</style>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -544,8 +624,8 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
    "@type": "WebPage",
    "@id": "https://fueltofunction.mx/retos/",
    "url": "https://fueltofunction.mx/retos/",
-   "name": "Retos de entrenamiento | Fuel to Function",
-   "description": "Programas con inicio y fin para ganar fuerza y construir hábitos. Próximamente.",
+   "name": "Retos de nutrición y entrenamiento | Fuel to Function",
+   "description": "Tres retos con Ana Yepez: 30 días de comida real, 65 días de fuerza funcional y 120 días de nutrición y entrenamiento juntos. Sin dietas restrictivas.",
    "inLanguage": "es-MX",
    "isPartOf": {
     "@id": "https://fueltofunction.mx/#sitio"
@@ -614,15 +694,273 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
   <header class="ph-head celeste">
     <div class="w">
       <h1 class="xcnd">Retos</h1>
-      <div class="meta"><span class="lbl">Tienda / Retos fitness</span><p>Programas con inicio y fin para ganar fuerza y construir hábitos que te duren toda la vida.</p><span class="lbl" data-count="reto"></span></div>
+      <div class="meta"><span class="lbl">Tienda / Retos fitness</span><p>Programas con inicio y fin para comer mejor, ganar fuerza y construir hábitos que te duren toda la vida. Sin dietas restrictivas, sin culpa y sin milagros.</p>
+        <div class="row"><a class="btn" href="#elige">Elige tu reto</a><a class="btn line" href="/agenda/">Pregúntale a Ana</a></div></div>
     </div>
   </header>
-  <section class="w sec">
-    <div class="grid" data-grid="reto"></div>
-    <div class="empty with-photo" data-empty="reto">
-      <div class="shot"><img class="fill" src="/img/ana-zancada.jpg" alt="Ana Yepez haciendo zancada con banda de resistencia" width="1066" height="1600" loading="lazy" style="object-position:center 55%"><div class="oct" aria-hidden="true"><span><small>Muy</small>pronto</span></div></div>
-      <div><h3>Los primeros retos están en preparación.</h3><p>Síguela en Instagram para enterarte del lanzamiento. Mientras tanto, puedes empezar con un plan de entrenamiento personalizado.</p>
-        <div class="row"><a class="btn" href="https://instagram.com/nut.anayepez" target="_blank" rel="noopener">Seguir a @nut.anayepez</a><a class="btn line" href="/servicios/">Ver plan de entrenamiento</a></div></div>
+
+  <!-- ---------- elige tu reto ---------- -->
+  <section class="w sec" id="elige">
+    <div class="sh"><h2 class="xcnd">Elige tu <span class="mk">reto</span></h2><p>Tres presentaciones: comida, entrenamiento o las dos juntas. Cada una trae una acción para cada día y un punto de llegada que puedes medir.</p></div>
+    <div class="labels tres">
+      <article class="label">
+        <span class="n">Reto 30 · Comida real</span><span class="bar"></span>
+        <div class="r"><span>Duración</span><span>30 días</span></div>
+        <div class="r"><span>Enfoque</span><span>Alimentación</span></div>
+        <div class="r"><span>Tiempo al día</span><span>5 a 10 min</span></div>
+        <p class="contains"><b>Contiene:</b> una acción diaria, porciones con tu mano, lista de súper, plan B para días caóticos y lectura de etiquetas.</p>
+        <div class="price"><b class="soon">Próximamente</b><span>Ideal para<br>empezar</span></div>
+        <a class="go" href="#reto-30">Ver el reto de 30 días →</a>
+      </article>
+      <article class="label">
+        <span class="n">Reto 65 · Fuerza funcional</span><span class="bar"></span>
+        <div class="r"><span>Duración</span><span>65 días</span></div>
+        <div class="r"><span>Enfoque</span><span>Entrenamiento</span></div>
+        <div class="r"><span>Frecuencia</span><span>3 a 5 sesiones por semana</span></div>
+        <p class="contains"><b>Contiene:</b> test inicial y final, 3 bloques progresivos, sesiones para casa o gimnasio y un workout final.</p>
+        <div class="price"><b class="soon">Próximamente</b><span>Principiante<br>e intermedio</span></div>
+        <a class="go" href="#reto-65">Ver el reto de 65 días →</a>
+      </article>
+      <article class="label">
+        <div class="sticker"><span><small>El más</small>completo</span></div>
+        <span class="n">Reto 120 · Fuel to Function</span><span class="bar"></span>
+        <div class="r"><span>Duración</span><span>120 días</span></div>
+        <div class="r"><span>Enfoque</span><span>Nutrición + entrenamiento</span></div>
+        <div class="r"><span>Seguimiento</span><span>Individual, con Ana</span></div>
+        <p class="contains"><b>Contiene:</b> plan nutricional a tu medida, valoraciones InBody, los dos retos anteriores integrados y un evento final.</p>
+        <div class="price"><b class="soon">Próximamente</b><span>Cancún<br>u online</span></div>
+        <a class="go" href="#reto-120">Ver el reto de 120 días →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ---------- reto 30 ---------- -->
+  <section class="r30 sec" id="reto-30" aria-labelledby="t30">
+    <div class="w">
+      <div class="sh"><h2 class="xcnd" id="t30">30 días · <span class="mk">Comida real</span></h2><p>No es una dieta: es aprender a armar tu plato, planear tu semana y resolver los días complicados sin abandonar. Una sola acción por día.</p></div>
+
+      <div class="plato" aria-label="Cómo armar tu plato">
+        <div class="pl ver"><span class="lbl">½ plato</span><b>Verduras</b><span>Calabacita, nopal, jitomate, espinaca, brócoli, ensalada.</span></div>
+        <div class="pl pro"><span class="lbl">¼ plato · 1 palma</span><b>Proteína</b><span>Pollo, pescado, huevo, res magra, frijol, yogurt griego, queso panela.</span></div>
+        <div class="pl car"><span class="lbl">¼ plato · 1 puño</span><b>Carbohidrato</b><span>Tortilla, arroz, papa, camote, avena, pan, fruta.</span></div>
+        <div class="pl gra"><span class="lbl">1 pulgar</span><b>Grasa</b><span>Aguacate, aceite de oliva, nueces, semillas, crema de cacahuate.</span></div>
+      </div>
+
+      <div class="wkgrid">
+        <article class="wk">
+          <span class="lbl">Semana 1</span><span class="t">Orden</span><span class="bar"></span>
+          <ol start="1">
+            <li><b>Día 1</b><span>Toma foto de todo lo que comes hoy, sin cambiar nada. Sin juicio: es tu punto de partida.</span></li>
+            <li><b>Día 2</b><span>Desayuna con una proteína: huevo, yogurt griego o queso panela.</span></li>
+            <li><b>Día 3</b><span>Arma tu primer plato con los 4 grupos.</span></li>
+            <li><b>Día 4</b><span>Agua natural como bebida principal. Lleva tu botella a todos lados.</span></li>
+            <li><b>Día 5</b><span>Define 3 horarios de comida y ponles alarma.</span></li>
+            <li><b>Día 6</b><span>Logra 2 comidas del día con los 4 grupos.</span></li>
+            <li><b>Día 7</b><span>Revisión: ¿qué te salió mejor? Elige una cosa para repetir.</span></li>
+          </ol>
+        </article>
+        <article class="wk">
+          <span class="lbl">Semana 2</span><span class="t">Porciones</span><span class="bar"></span>
+          <ol start="8">
+            <li><b>Día 8</b><span>Verduras en comida y cena: mínimo 1 taza cocida o 2 crudas.</span></li>
+            <li><b>Día 9</b><span>Mide con tu mano: palma de proteína, puño de carbohidrato, pulgar de grasa.</span></li>
+            <li><b>Día 10</b><span>Fruta entera en lugar de jugo.</span></li>
+            <li><b>Día 11</b><span>Proteína en cada comida principal.</span></li>
+            <li><b>Día 12</b><span>Cambia un refresco o bebida azucarada por agua mineral o té sin azúcar.</span></li>
+            <li><b>Día 13</b><span>Prueba una verdura que casi nunca comes.</span></li>
+            <li><b>Día 14</b><span>Revisión + foto de tu plato favorito de la semana.</span></li>
+          </ol>
+        </article>
+        <article class="wk">
+          <span class="lbl">Semana 3</span><span class="t">Planeación</span><span class="bar"></span>
+          <ol start="15">
+            <li><b>Día 15</b><span>Escribe tu menú de 3 días: una opción de siempre y una rápida.</span></li>
+            <li><b>Día 16</b><span>Haz tu lista de súper ordenada por grupos.</span></li>
+            <li><b>Día 17</b><span>Prepara 2 proteínas y 1 carbohidrato para 3 días.</span></li>
+            <li><b>Día 18</b><span>Colación que sí llena: fruta + proteína o fruta + grasa.</span></li>
+            <li><b>Día 19</b><span>Lee una etiqueta: porción, azúcar añadido y sellos de advertencia.</span></li>
+            <li><b>Día 20</b><span>Cena 2 a 3 horas antes de dormir.</span></li>
+            <li><b>Día 21</b><span>Revisión: ¿qué preparación te ahorró más tiempo?</span></li>
+          </ol>
+        </article>
+        <article class="wk">
+          <span class="lbl">Semana 4</span><span class="t">Vida real</span><span class="bar"></span>
+          <ol start="22">
+            <li><b>Día 22</b><span>Arma tu plan B: 3 opciones de tienda u oficina con proteína + carbohidrato.</span></li>
+            <li><b>Día 23</b><span>Come fuera eligiendo con la fórmula del plato.</span></li>
+            <li><b>Día 24</b><span>Comida con amigos o familia: disfrútala y vuelve a tu rutina en la siguiente comida. Cero culpa.</span></li>
+            <li><b>Día 25</b><span>Día de comida real: todo con ingredientes que reconozcas.</span></li>
+            <li><b>Día 26</b><span>Come sin pantallas una vez y califica tu hambre del 1 al 10.</span></li>
+            <li><b>Día 27</b><span>Si entrenas: carbohidrato antes y proteína + carbohidrato después.</span></li>
+            <li><b>Día 28</b><span>Revisión: ¿qué situación ya resuelves sin pensarlo?</span></li>
+          </ol>
+        </article>
+        <article class="wk wk-fin">
+          <span class="lbl">Días 29 y 30</span><span class="t">Cierre</span><span class="bar"></span>
+          <ol start="29">
+            <li><b>Día 29</b><span>Repite tu mejor día del reto.</span></li>
+            <li><b>Día 30</b><span>Foto de tus comidas y compárala con el día 1. Elige los 3 hábitos que te quedas.</span></li>
+          </ol>
+          <div class="oct" aria-hidden="true"><span><small>Reto</small>cumplido</span></div>
+        </article>
+      </div>
+
+      <div class="notes rnotes">
+        <div><h3>Checklist diario</h3>
+          <ul class="tick"><li>Hice la acción del día</li><li>Mis comidas principales tuvieron los 4 grupos</li><li>Agua natural como bebida principal</li><li>Verduras en al menos 2 comidas</li><li>Respeté mis horarios</li></ul></div>
+        <div><h3>Reglas de la casa</h3>
+          <ul><li>No se cuentan calorías.</li><li>No hay alimentos prohibidos: hay porciones y momentos.</li><li>Fallar un día no reinicia el reto: retomas en la siguiente comida.</li><li>Nunca se compensa con ayuno ni con ejercicio extra.</li><li>Repetir comidas está permitido y ayuda.</li></ul></div>
+        <div><h3>Para quién es</h3>
+          <p>Para ti si sientes que ya probaste de todo, te confundes con lo que ves en redes o quieres aprender a comer bien sin hacer otra dieta.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- reto 65 ---------- -->
+  <section class="r65 sec" id="reto-65" aria-labelledby="t65">
+    <div class="w">
+      <div class="sh"><h2 class="xcnd" id="t65">65 días · <span class="mk">Fuerza funcional</span></h2><p>Entrenamiento para la vida real: levantar, empujar, jalar, cargar y moverte con energía. Tres bloques, de la técnica a la potencia, con un test al inicio y otro al final.</p></div>
+
+      <div class="uso">
+        <ol>
+          <li><div><h3>Base · días 2 a 21</h3><p>3 sesiones de fuerza + 2 caminatas de 30 min por semana. 3 series de 10 a 12 repeticiones, esfuerzo 6–7 de 10. Aprendes la técnica de cada movimiento antes de cargar más.</p></div></li>
+          <li><div><h3>Fuerza · días 22 a 42</h3><p>4 sesiones por semana. 4 series de 6 a 10 repeticiones, esfuerzo 7–8 de 10, y un EMOM de 8 minutos al final (un ejercicio al inicio de cada minuto). La semana 6 es de descarga: 30 % menos volumen.</p></div></li>
+          <li><div><h3>Potencia · días 43 a 63</h3><p>4 sesiones + 1 opcional. Fuerza de 3 × 5–8, circuitos AMRAP de 12 a 15 minutos, intervalos 30/30 y estaciones tipo Hyrox adaptadas a tu nivel.</p></div></li>
+        </ol>
+        <figure><img class="fill" src="/img/ana-sentadilla.jpg" alt="Ana Yepez haciendo sentadilla con banda de resistencia" width="1066" height="1600" loading="lazy"><figcaption class="lbl">Técnica antes que carga</figcaption></figure>
+      </div>
+
+      <h3 class="sub xcnd">Los 7 movimientos</h3>
+      <div class="moves">
+        <span>Sentadilla</span><span>Bisagra de cadera</span><span>Empuje</span><span>Jalón</span><span>Zancada</span><span>Acarreo</span><span>Core</span>
+      </div>
+
+      <h3 class="sub xcnd">Sesiones por bloque</h3>
+      <div class="sesgrid">
+        <article class="ses"><span class="lbl">Base · A</span><b>Pierna + empuje</b><ul><li>Sentadilla goblet</li><li>Lagartija inclinada</li><li>Puente de glúteo con banda</li><li>Plancha frontal</li></ul></article>
+        <article class="ses"><span class="lbl">Base · B</span><b>Bisagra + jalón</b><ul><li>Peso muerto rumano</li><li>Remo con banda o mancuerna</li><li>Zancada hacia atrás</li><li>Dead bug</li></ul></article>
+        <article class="ses"><span class="lbl">Base · C</span><b>Cuerpo completo</b><ul><li>Step-up al cajón</li><li>Press de hombro</li><li>Farmer carry</li><li>Bird dog</li></ul></article>
+        <article class="ses f"><span class="lbl">Fuerza · A–D</span><b>Pierna · Torso · Posterior · Completo</b><ul><li>Sentadilla, zancada búlgara</li><li>Press de pecho, remo, jalón</li><li>Peso muerto rumano, hip thrust</li><li>Thruster + EMOM de swings, carry o remo</li></ul></article>
+        <article class="ses p"><span class="lbl">Potencia</span><b>Fuerza + acondicionamiento</b><ul><li>AMRAP de 12–15 min</li><li>Intervalos 30/30</li><li>Estaciones: remo, wall balls, swings, zancadas con peso, carry</li></ul></article>
+      </div>
+
+      <div class="cols2">
+        <div>
+          <h3 class="sub xcnd">Test · día 1 y días 64–65</h3>
+          <table class="spec">
+            <tr><th scope="row">Sentadillas</th><td>Repeticiones en 60 segundos</td></tr>
+            <tr><th scope="row">Lagartijas</th><td>Repeticiones en 60 s, completas o con rodillas apoyadas</td></tr>
+            <tr><th scope="row">Plancha</th><td>Tiempo máximo con buena técnica, tope de 2 minutos</td></tr>
+            <tr><th scope="row">Zancadas</th><td>Repeticiones alternas en 60 segundos</td></tr>
+            <tr><th scope="row">1 km</th><td>Tiempo caminando, trotando o combinando</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3 class="sub xcnd">Final · Workout FTF 65</h3>
+          <table class="spec">
+            <tr><th scope="row">Formato</th><td>3 a 5 rondas según tu nivel</td></tr>
+            <tr><th scope="row">Por ronda</th><td>13 sentadillas goblet · 13 remos · 13 swings · 13 lagartijas · 13 zancadas</td></tr>
+            <tr><th scope="row">Total</th><td>65 repeticiones por ronda</td></tr>
+            <tr><th scope="row">Cuándo</th><td>Día 65, después del test final</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="notes rnotes">
+        <div><h3>Reglas de seguridad</h3>
+          <ul><li>Siempre 8 minutos de calentamiento y movilidad.</li><li>Termina cada serie con 2 o 3 repeticiones «en reserva».</li><li>Dolor agudo o en una articulación: para y usa la versión más sencilla del ejercicio.</li><li>Mínimo 2 días de descanso por semana.</li></ul></div>
+        <div><h3>Qué necesitas</h3>
+          <ul><li>Bandas de resistencia y mancuernas o kettlebell, o acceso a gimnasio.</li><li>Tapete y un cajón o escalón firme.</li><li>Una libreta para anotar tus cargas.</li></ul></div>
+        <div><h3>Combustible</h3>
+          <p>Entrenar sin comer suficiente no funciona. Si quieres resultados completos, combina este reto con el de 30 días o haz el de 120.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- reto 120 ---------- -->
+  <section class="r120 sec" id="reto-120" aria-labelledby="t120">
+    <div class="w">
+      <div class="sh"><h2 class="xcnd" id="t120">120 días · <span class="mk">Fuel to Function</span></h2><p>Nutrición y entrenamiento trabajando en equipo. Cuatro fases de 30 días en las que pasas de seguir un plan a decidir por tu cuenta, con valoraciones y seguimiento de Ana.</p></div>
+
+      <div class="fases">
+        <article class="fase">
+          <span class="lbl">Días 1 a 30</span><span class="t">01 · Base</span><span class="bar"></span>
+          <div class="r"><span>Nutrición</span><span>Tu plan nutricional a tu medida + las 30 acciones de Comida real.</span></div>
+          <div class="r"><span>Entreno</span><span>Bloque Base: técnica, 3 sesiones + 2 caminatas.</span></div>
+          <p class="hito"><b>Día 0:</b> valoración InBody, consulta y test inicial.</p>
+        </article>
+        <article class="fase">
+          <span class="lbl">Días 31 a 60</span><span class="t">02 · Combustible</span><span class="bar"></span>
+          <div class="r"><span>Nutrición</span><span>Entiendes tus macronutrientes y qué comer antes y después de entrenar.</span></div>
+          <div class="r"><span>Entreno</span><span>Bloque Fuerza: 4 sesiones con progresión de cargas.</span></div>
+          <p class="hito"><b>Días 30 y 60:</b> seguimiento y ajuste según tu progreso real.</p>
+        </article>
+        <article class="fase">
+          <span class="lbl">Días 61 a 90</span><span class="t">03 · Fuerza</span><span class="bar"></span>
+          <div class="r"><span>Nutrición</span><span>Proteína y recuperación, fines de semana, viajes y comer fuera.</span></div>
+          <div class="r"><span>Entreno</span><span>Bloque Potencia: circuitos, intervalos y estaciones tipo Hyrox.</span></div>
+          <p class="hito"><b>Día 90:</b> InBody de control y test parcial.</p>
+        </article>
+        <article class="fase">
+          <span class="lbl">Días 91 a 120</span><span class="t">04 · Función</span><span class="bar"></span>
+          <div class="r"><span>Nutrición</span><span>Autonomía: armas tus comidas sin depender del plan.</span></div>
+          <div class="r"><span>Entreno</span><span>Preparación para el evento final: simulacro tipo Hyrox adaptado o 5K.</span></div>
+          <p class="hito"><b>Día 120:</b> InBody final, comparación completa y plan de mantenimiento.</p>
+        </article>
+      </div>
+
+      <div class="about r120-about">
+        <img class="ph" src="/img/ana-consulta.jpg" alt="Ana Yepez midiendo la composición corporal de una paciente con InBody" width="1067" height="1600" loading="lazy">
+        <div class="txt">
+          <p class="big">Medimos con datos, no con la báscula: músculo, grasa y agua en cada fase.</p>
+          <table class="spec">
+            <tr><th scope="row">Valoraciones</th><td>InBody en los días 0, 30, 60, 90 y 120 (presencial en Cancún)</td></tr>
+            <tr><th scope="row">Online</th><td>Medidas, fotos y test funcional en lugar de InBody</td></tr>
+            <tr><th scope="row">Plan</th><td>Nutricional a tu medida, ajustado en cada seguimiento</td></tr>
+            <tr><th scope="row">Entreno</th><td>4 bloques progresivos para casa o gimnasio</td></tr>
+            <tr><th scope="row">Para quién</th><td>Quieres un cambio real y medible, o te preparas para una meta deportiva</td></tr>
+          </table>
+          <p>Ana corre medios maratones y compite en Hyrox: el evento final está pensado para que vivas lo que se siente llegar preparado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- compara ---------- -->
+  <section class="w sec" id="compara" aria-labelledby="tcmp">
+    <div class="sh"><h2 class="xcnd" id="tcmp">Compara</h2><p>Si dudas, empieza por el de 30 días. Si quieres el cambio completo, el de 120.</p></div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th scope="col"><span class="sr">Característica</span></th><th scope="col">30 · Comida real</th><th scope="col">65 · Fuerza funcional</th><th scope="col">120 · Fuel to Function</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enfoque</th><td>Alimentación</td><td>Entrenamiento</td><td>Nutrición + entrenamiento</td></tr>
+          <tr><th scope="row">Plan</th><td>Guía general con acciones diarias</td><td>Programa de 3 bloques</td><td>Plan nutricional a tu medida + 4 bloques</td></tr>
+          <tr><th scope="row">Tiempo</th><td>5 a 10 min al día</td><td>35 a 50 min por sesión</td><td>Sesión + registro</td></tr>
+          <tr><th scope="row">Medición</th><td>Fotos de tus comidas, día 1 y día 30</td><td>Test día 1 y días 64–65</td><td>InBody o medidas en 5 momentos</td></tr>
+          <tr><th scope="row">Consulta con Ana</th><td>No incluye</td><td>No incluye</td><td>Sí, en cada fase</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ---------- preguntas ---------- -->
+  <section class="w sec qa-sec" id="preguntas" aria-labelledby="tqa">
+    <div class="sh"><h2 class="xcnd" id="tqa">Preguntas</h2><p>Lo que más preguntan antes de empezar un reto.</p></div>
+    <div class="qa">
+      <details><summary>¿Tengo que contar calorías?</summary><p>No. Trabajas con porciones y con los 4 grupos de alimentos. En el reto de 120 días Ana hace los cálculos por ti y los convierte en comida real.</p></details>
+      <details><summary>¿Hay alimentos prohibidos?</summary><p>No. Aquí no hay restricción ni culpa: aprendes porciones y momentos para que cualquier comida quepa en tu vida.</p></details>
+      <details><summary>¿Necesito gimnasio para el reto de 65 días?</summary><p>No es obligatorio. Con bandas, un par de mancuernas o una kettlebell y un tapete puedes hacerlo en casa. En el gimnasio tendrás más opciones de carga.</p></details>
+      <details><summary>Nunca he entrenado, ¿puedo hacerlo?</summary><p>Sí. El primer bloque es para aprender la técnica y cada ejercicio tiene una versión más sencilla. Avanzas a tu ritmo.</p></details>
+      <details><summary>¿Qué pasa si fallo un día?</summary><p>Nada. No se reinicia el reto ni se compensa. Retomas en la siguiente comida o sesión: aprender a volver también es parte del reto.</p></details>
+      <details><summary>No vivo en Cancún, ¿puedo hacer el de 120 días?</summary><p>Sí, online. En lugar de InBody usamos medidas, fotos y el test funcional para seguir tu progreso.</p></details>
+    </div>
+    <p class="aviso"><b>Antes de empezar:</b> consulta a tu médico, sobre todo si tienes una condición médica o lesión, tomas medicamentos o estás embarazada o en lactancia; en esos casos participa solo con supervisión profesional. Los retos de 30 y 65 días son programas generales y no sustituyen una consulta ni un plan personalizado. Si sientes dolor agudo, mareo o falta de aire al entrenar, detente.</p>
+  </section>
+
+  <section class="close">
+    <div class="w">
+      <h2 class="xcnd">¿Listo para tu <span>día 1?</span></h2>
+      <a class="oct octbtn" href="/agenda/"><span>Escríbele<br>a Ana</span></a>
     </div>
   </section>
 </main>
@@ -654,7 +992,7 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
 <script>
 (function(){
   var CATS={ebook:"Ebook",reto:"Reto fitness",plan:"Plan nutricional"};
-  var products=[{id:1,type:"ebook",title:"Comida que Funciona",spec:"Guía de alimentación balanceada + recetas",price:null}];
+  var products=[{id:1,type:"ebook",title:"Comida que Funciona",spec:"Guía de alimentación balanceada + recetas",price:null},{id:2,type:"reto",title:"Reto 30 · Comida real",spec:"30 acciones diarias para comer mejor",price:null},{id:3,type:"reto",title:"Reto 65 · Fuerza funcional",spec:"Entrenamiento progresivo en 3 bloques",price:null},{id:4,type:"reto",title:"Reto 120 · Fuel to Function",spec:"Nutrición + entrenamiento con seguimiento",price:null}];
   var VIEWS=["inicio","servicios","ebooks","retos","planes","tienda","ana","agenda","panel"];
   var TYPE_VIEW={ebook:"ebooks",reto:"retos",plan:"planes"};
   var filter="all",cart=[],nextId=100;
