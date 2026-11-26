@@ -4,21 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fuel to Function by Ana Yepez | Nutrición y entrenamiento en Cancún y online</title>
-<meta name="description" content="Nutrición y entrenamiento en Cancún y online con Ana Yepez, Lic. en Nutrición y entrenadora ISSA. Valoración InBody, consulta, plan de entrenamiento y programa integral.">
+<meta name="description" content="Nutrición y entrenamiento en Cancún y online con Ana Yepez, Lic. en Nutrición y entrenadora ISSA. Valoración InBody, consulta, plan de entrenamiento, programa integral y retos de 30, 65 y 120 días.">
 <meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://fueltofunction.mx/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="Fuel to Function by Ana Yepez">
 <meta property="og:title" content="Fuel to Function by Ana Yepez | Nutrición y entrenamiento en Cancún y online">
-<meta property="og:description" content="Nutrición y entrenamiento en Cancún y online con Ana Yepez, Lic. en Nutrición y entrenadora ISSA. Valoración InBody, consulta, plan de entrenamiento y programa integral.">
+<meta property="og:description" content="Nutrición y entrenamiento en Cancún y online con Ana Yepez, Lic. en Nutrición y entrenadora ISSA. Valoración InBody, consulta, plan de entrenamiento, programa integral y retos de 30, 65 y 120 días.">
 <meta property="og:url" content="https://fueltofunction.mx/">
 <meta property="og:image" content="https://fueltofunction.mx/img/ana-accion.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..700&display=swap">
+<script src="/js/firebase-config.js"></script>
+<script src="/js/sitio-datos.js" defer></script>
 <style>
 /* Dirección "Etiqueta": the site speaks the visual language of Mexican food packaging —
    nutrition-facts panels, ingredient lists, octagon seals, barcodes — because reading labels
@@ -26,7 +27,7 @@
    Single committed light look (cream paper, navy ink). */
 :root{
   --paper:#FBF6EF; --ink:#22304A; --ink-2:#4A556B; --rule:#22304A;
-  --rosa:#F6C9D3; --acento:#D9718C; --celeste:#BFE0F2; --amarillo:#FBE6A2; --white:#FFFFFF;
+  --rosa:#F6C9D3; --acento:#D9718C; --verde:#CDE5BF; --celeste:#BFE0F2; --amarillo:#FBE6A2; --white:#FFFFFF;
   /* primaries: rosa · celeste · crema. Secondary: amarillo. Text/structure: ancla + blue scale. Accent: rosa acento */
   /* blue scale from Ancla to Celeste: 900 ink · 700 · 500 · 300 celeste · 100 */
   --azul-700:#3A5A85; --azul-500:#7BA3CC; --azul-100:#E4F1FA;
@@ -331,7 +332,7 @@ nav.links a[aria-current="page"]{background:var(--ink);color:var(--paper)}
 @media (max-width:520px){.faqs{grid-template-columns:1fr}}
 
 /* ---------- contact ---------- */
-.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .cbox{border:2px solid var(--ink);background:var(--white);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .cbox .bar{height:6px;background:var(--ink)}
 .cbox .v{font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(30px,2.8vw,42px);line-height:1;user-select:all;overflow-wrap:anywhere}
@@ -363,6 +364,122 @@ form.up textarea{min-height:84px;resize:vertical}
 .notes h3{margin:0;font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:30px;line-height:.95}
 .notes p{margin:0;color:var(--ink-2);font-size:15px}
 @media (max-width:860px){.notes{grid-template-columns:1fr}}
+
+/* ---------- retos (30 · 65 · 120) ---------- */
+[id^="rt-"]{scroll-margin-top:104px}
+.rt-band{border-top:2px solid var(--rule)}
+.rt-band.white{background:var(--white)}.rt-band.azul{background:var(--azul-100)}
+.rt-h3{margin:0 0 14px;font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(30px,3vw,44px);line-height:.95}
+.rt-mb{margin-bottom:48px}
+.labels.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.label .price b.soon{font-size:clamp(30px,2.6vw,38px)}
+@media (max-width:900px){.labels.three{grid-template-columns:1fr}.labels.three .label:nth-child(n){margin-top:0}.labels.three .sticker{right:8px}}
+.plato{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:2px solid var(--ink);margin-bottom:28px}
+.plato div{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.plato div + div{border-left:2px solid var(--ink)}
+.plato .v{background:var(--celeste)}.plato .p{background:var(--rosa)}.plato .c{background:var(--amarillo)}.plato .g{background:var(--paper)}
+.plato b{font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(28px,2.6vw,38px);line-height:.95}
+.plato p{margin:0;font-size:14px}
+@media (max-width:860px){.plato{grid-template-columns:1fr 1fr}.plato div:nth-child(3){border-left:0}.plato div:nth-child(n+3){border-top:2px solid var(--ink)}}
+@media (max-width:480px){.plato{grid-template-columns:1fr}.plato div + div{border-left:0;border-top:2px solid var(--ink)}}
+.semanas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;margin-bottom:48px}
+.sem{border:2px solid var(--ink);background:var(--paper);padding:14px 14px 6px;min-width:0}
+.sem.fin{background:var(--rosa);padding-bottom:16px}
+.sem h3{margin:2px 0 4px;font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(30px,2.6vw,38px);line-height:.95;border-bottom:8px solid var(--ink);padding-bottom:8px}
+.dias{list-style:none;margin:0;padding:0}
+.dias li{display:grid;grid-template-columns:54px 1fr;gap:10px;padding-block:8px;border-bottom:1px solid var(--ink);font-size:14px;line-height:1.35}
+.dias li:last-child{border-bottom:0}
+.dias b{font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:12px;padding-top:2px;white-space:nowrap}
+.sem.fin .oct{--s:96px;margin:14px 0 0 auto}
+@media (max-width:960px){.semanas{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.semanas{grid-template-columns:1fr}}
+.notes ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15px;display:grid;gap:6px}
+.notes ul.checks{list-style:none;padding:0}
+.checks label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.checks input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:2px solid var(--ink);border-radius:0;background:var(--white);flex:none;margin:2px 0 0;display:grid;place-items:center;cursor:pointer}
+.checks input:checked{background:var(--ink)}
+.checks input:checked::after{content:"✓";color:var(--paper);font-size:13px;font-weight:900;line-height:1}
+.tags{display:flex;gap:8px;flex-wrap:wrap;list-style:none;margin:0 0 40px;padding:0}
+.tags li{border:1.5px solid var(--ink);background:var(--white);border-radius:999px;padding:9px 16px;font-stretch:75%;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:13px;line-height:1}
+.sesiones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-bottom:48px}
+.ses{background:var(--white);border:2px solid var(--ink);border-top-width:8px;padding:12px 14px 16px;min-width:0}
+.ses.fz{background:var(--rosa)}.ses.pt{background:var(--amarillo)}
+.ses h4{margin:2px 0 8px;font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:26px;line-height:.95}
+.ses ul{margin:0;padding-left:18px;font-size:14px;display:grid;gap:4px}
+@media (max-width:1100px){.sesiones{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.sesiones{grid-template-columns:1fr}}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:860px){.duo{grid-template-columns:1fr}}
+.fases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-bottom:64px}
+.fase{background:var(--white);border:2px solid var(--ink);padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;min-width:0;box-shadow:6px 6px 0 var(--sh,var(--ink))}
+.fase:nth-child(1){--sh:var(--rosa)}.fase:nth-child(2){--sh:var(--amarillo)}.fase:nth-child(3){--sh:var(--celeste)}
+.fase h3{margin:0;font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(28px,2.4vw,36px);line-height:.95;border-bottom:8px solid var(--ink);padding-bottom:8px}
+.fase p{margin:0;font-size:14px;line-height:1.35}
+.fase p + .lbl{border-top:1px solid var(--ink);padding-top:8px}
+.fase .hito{margin-top:auto;background:var(--rosa);border-top:4px solid var(--ink);padding:8px 10px}
+@media (max-width:1100px){.fases{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fases{grid-template-columns:1fr}}
+.cmp-wrap{overflow-x:auto;border:2px solid var(--ink);background:var(--white)}
+.cmp{width:100%;min-width:680px;border-collapse:collapse;font-size:15px}
+.cmp th,.cmp td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--ink);vertical-align:top}
+.cmp th + th,.cmp td{border-left:1px solid var(--ink)}
+.cmp thead th{font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:22px;line-height:1;border-bottom:6px solid var(--ink)}
+.cmp tbody th{font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:12px;width:18%}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,4vw,56px);align-items:start}
+.qa > div{border-top:2px solid var(--ink)}
+.qa details{border-bottom:1px solid var(--ink)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding-block:16px;font-stretch:75%;font-weight:700;font-size:18px;line-height:1.2}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-weight:900;font-size:26px;line-height:.6;color:var(--acento);flex:none}
+.qa details[open] summary::after{content:"–"}
+.qa p{margin:0 0 16px;color:var(--ink-2);max-width:60ch}
+@media (max-width:760px){.qa{grid-template-columns:1fr}.qa > div + div{border-top:0}}
+.aviso{margin:32px 0 0;background:var(--amarillo);border:2px solid var(--ink);padding:14px 16px;font-size:14px;max-width:1000px}
+
+/* reto 30 · comida real & bases */
+.rt-intro{margin:0 0 20px;max-width:62ch;color:var(--ink-2)}
+.bienv{border-left:8px solid var(--rosa);padding:4px 0 4px 20px;max-width:72ch}
+.bienv p{margin:0 0 10px;font-size:17px}
+.sem-p{margin:0 0 6px;font-size:14px;color:var(--ink-2)}
+.dias.hab li{grid-template-columns:32px 1fr}
+.dias.hab b{font-stretch:62%;font-weight:900;font-size:22px;letter-spacing:0;color:var(--acento);padding-top:0;line-height:1}
+.dias.hab strong{font-weight:700}
+.plato .g b{font-size:clamp(24px,2.2vw,32px)}
+.super{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:14px}
+.super .grp{border:2px solid var(--ink);background:var(--white);min-width:0}
+.super h4{margin:0;padding:10px 14px;border-bottom:2px solid var(--ink);font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:24px;line-height:1}
+.super .g-v h4{background:var(--verde)}.super .g-p h4{background:var(--rosa)}.super .g-c h4{background:var(--amarillo)}.super .g-a h4{background:var(--celeste)}.super .g-g h4{background:var(--paper)}
+.super ul{list-style:none;margin:0;padding:8px 14px 12px;display:grid;gap:4px;font-size:14px}
+.super li::before{content:"□";margin-right:8px;color:var(--ink-2)}
+@media (max-width:860px){.super{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.super{grid-template-columns:1fr}}
+.nota{margin:0 0 48px;max-width:72ch;font-size:15px;color:var(--ink-2)}
+.semanas.cuatro{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1100px){.semanas.cuatro{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.semanas.cuatro{grid-template-columns:1fr}}
+.notes .btn{align-self:flex-start}
+.comidas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.comidas .ses p{margin:0 0 8px;font-size:14px;color:var(--ink-2)}
+.comidas .ses ul{gap:6px}
+@media (max-width:1100px){.comidas{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.comidas{grid-template-columns:1fr}}
+.tracker{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:960px){.tracker{grid-template-columns:1fr}}
+.trk{border:2px solid var(--ink);background:var(--white);min-width:0}
+.trk-h{padding:10px 14px;border-bottom:2px solid var(--ink);font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:13px}
+.trk-s1 .trk-h{background:var(--celeste)}.trk-s2 .trk-h{background:var(--amarillo)}.trk-s3 .trk-h{background:var(--paper)}.trk-s4 .trk-h{background:var(--rosa)}
+.trk-wrap{overflow-x:auto}
+.trk table{width:100%;border-collapse:collapse;font-size:13px;min-width:430px}
+.trk th,.trk td{padding:6px 4px;border-bottom:1px solid var(--ink);text-align:center}
+.trk tbody tr:last-child th,.trk tbody tr:last-child td{border-bottom:0}
+.trk tbody th{text-align:left;font-weight:600;padding-left:12px;width:46%}
+.trk thead th{font-stretch:75%;font-weight:800}
+.trk abbr{text-decoration:none}
+.trk input{appearance:none;-webkit-appearance:none;width:22px;height:22px;border:2px solid var(--ink);border-radius:0;background:var(--white);margin:0;display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle}
+.trk input:checked{background:var(--ink)}
+.trk input:checked::after{content:"✓";color:var(--paper);font-size:14px;font-weight:900;line-height:1}
+@media (max-width:520px){.trk table{min-width:0;font-size:12px;table-layout:fixed}.trk tbody th{width:auto;padding-left:8px;line-height:1.2}.trk thead td{width:38%}.trk th,.trk td{padding:5px 1px}.trk input{width:20px;height:20px}}
 
 /* ---------- closing band ---------- */
 .close{background:var(--ink);color:var(--paper)}
@@ -403,7 +520,7 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
 .drawer .foot{padding:18px 22px;border-top:4px solid var(--ink);display:flex;flex-direction:column;gap:12px}
 .drawer .total{display:flex;justify-content:space-between;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
 .drawer .note{font-size:13px;color:var(--ink-2);margin:0}
-.about h1{margin:0;font-size:clamp(56px,7vw,112px)}</style>
+</style>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -433,6 +550,7 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
     "addressRegion": "Quintana Roo",
     "addressCountry": "MX"
    },
+   "telephone": "+52 998 222 5771",
    "knowsLanguage": "es",
    "sameAs": [
     "https://www.instagram.com/nut.anayepez/"
@@ -545,7 +663,7 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
    "@id": "https://fueltofunction.mx/",
    "url": "https://fueltofunction.mx/",
    "name": "Fuel to Function by Ana Yepez | Nutrición y entrenamiento en Cancún y online",
-   "description": "Nutrición y entrenamiento en Cancún y online con Ana Yepez, Lic. en Nutrición y entrenadora ISSA. Valoración InBody, consulta, plan de entrenamiento y programa integral.",
+   "description": "Nutrición y entrenamiento en Cancún y online con Ana Yepez, Lic. en Nutrición y entrenadora ISSA. Valoración InBody, consulta, plan de entrenamiento, programa integral y retos de 30, 65 y 120 días.",
    "inLanguage": "es-MX",
    "isPartOf": {
     "@id": "https://fueltofunction.mx/#sitio"
@@ -559,18 +677,15 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
 </script>
 </head>
 <body>
-
-
-
 <header class="top">
   <div class="w">
-    <a class="brand" href="/" aria-label="Fuel to Function by Ana Yepez, inicio"><span class="oct" aria-hidden="true"><span>FtF</span></span><span class="nm"><b>Fuel to Function</b><i>by Ana Yepez</i></span></a>
+    <a class="brand" href="#inicio" aria-label="Fuel to Function by Ana Yepez, inicio"><span class="oct" aria-hidden="true"><span>FtF</span></span><span class="nm"><b>Fuel to Function</b><i>by Ana Yepez</i></span></a>
     <nav class="links" aria-label="Principal">
-      <a href="/servicios/">Servicios</a><a href="/ebooks/">Ebooks</a><a href="/retos/">Retos</a><a href="/planes/">Planes</a><a href="/tienda/">Tienda</a><a href="/sobre-ana/">Sobre Ana</a>
+      <a href="#servicios">Servicios</a><a href="#ebooks">Ebooks</a><a href="#retos">Retos</a><a href="#planes">Planes</a><a href="#tienda">Tienda</a><a href="#ana">Sobre Ana</a>
     </nav>
     <div class="hdr-actions">
       <button class="pill menu-btn" id="openMenu" type="button" aria-controls="mnav" aria-expanded="false">Menú</button>
-      <a class="pill solid agenda" href="/agenda/">Agenda</a>
+      <a class="pill solid agenda" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener">Agenda</a>
       <button class="pill cart" id="openCart" type="button" aria-label="Abrir carrito"><span class="lbl2">Carrito</span><span class="count" id="cartCount">0</span></button>
     </div>
   </div>
@@ -578,21 +693,22 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
 
 <div class="mnav" id="mnav" hidden role="dialog" aria-label="Menú">
   <div class="mtop">
-    <a class="brand" href="/"><span class="oct" aria-hidden="true"><span>FtF</span></span><span class="nm"><b>Fuel to Function</b><i>by Ana Yepez</i></span></a>
+    <a class="brand" href="#inicio"><span class="oct" aria-hidden="true"><span>FtF</span></span><span class="nm"><b>Fuel to Function</b><i>by Ana Yepez</i></span></a>
     <button class="pill" id="closeMenu" type="button">Cerrar</button>
   </div>
   <ul>
-    <li><a href="/">Inicio <span>→</span></a></li>
-    <li><a href="/servicios/">Servicios <span>→</span></a></li>
-    <li><a href="/ebooks/">Ebooks <span>→</span></a></li>
-    <li><a href="/retos/">Retos <span>→</span></a></li>
-    <li><a href="/planes/">Planes <span>→</span></a></li>
-    <li><a href="/tienda/">Tienda <span>→</span></a></li>
-    <li><a href="/sobre-ana/">Sobre Ana <span>→</span></a></li>
+    <li><a href="#inicio">Inicio <span>→</span></a></li>
+    <li><a href="#servicios">Servicios <span>→</span></a></li>
+    <li><a href="#ebooks">Ebooks <span>→</span></a></li>
+    <li><a href="#retos">Retos <span>→</span></a></li>
+    <li><a href="#planes">Planes <span>→</span></a></li>
+    <li><a href="#tienda">Tienda <span>→</span></a></li>
+    <li><a href="#ana">Sobre Ana <span>→</span></a></li>
   </ul>
-  <div class="mfoot"><a class="btn" href="/agenda/">Agenda tu consulta</a></div>
+  <div class="mfoot"><a class="btn" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener">Agenda por WhatsApp</a></div>
 </div>
 
+<!-- ================= INICIO (landing) ================= -->
 <main data-view="inicio">
   <section class="w hero">
     <div class="copy">
@@ -605,7 +721,7 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
         <span class="lbl">Nutrición + entrenamiento · Cancún y online</span>
         <h1 class="xcnd">Come para <span class="acc">funcionar.</span></h1>
         <p class="lede"><strong>Comer no tiene por qué ser tan complicado.</strong> Nutrición y entrenamiento para quienes quieren sentirse fuertes, rendir más, tener energía y estar <span class="mk">en paz con la comida</span>.</p>
-        <div class="row"><a class="btn" href="/servicios/">Ver servicios</a><a class="btn line" href="/agenda/">Agenda tu consulta</a></div>
+        <div class="row"><a class="btn" href="#servicios">Ver servicios</a><a class="btn line" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener">Agenda por WhatsApp</a></div>
       </div>
       <div class="ingr-panel" aria-label="Método Fuel to Function">
         <p><b>Ingredientes:</b> entender tu plato <span>(equivalentes, plato saludable, etiquetas)</span>, nutrir sin restricción ni culpa <span>(flexible y sostenible)</span>, funcionar <span>(fuerza, energía y rendimiento medidos con InBody)</span>.</p>
@@ -613,12 +729,12 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
       </div>
     </div>
     <div class="visual">
-      <img class="ph" src="/img/ana-accion.jpg" alt="Ana Yepez compitiendo con un balón medicinal" width="1066" height="1600" fetchpriority="high">
+      <img class="ph" src="img/ana-accion.jpg" alt="Ana Yepez compitiendo con un balón medicinal" width="1066" height="1600" fetchpriority="high">
       <div class="seals" aria-hidden="true">
         <div class="oct"><span><small>Cero</small>culpa</span></div>
         <div class="oct"><span><small>Sin</small>dietas milagro</span></div>
       </div>
-      <a class="ib" href="/servicios/" aria-label="Valoración InBody, 500 pesos. Ver servicios"><span><small>Valoración</small><b>InBody</b><i>$500</i></span></a>
+      <a class="ib" href="#servicios" aria-label="Valoración InBody, 500 pesos. Ver servicios"><span><small>Valoración</small><b>InBody</b><i data-precio="inbody">$500</i></span></a>
       <div class="facts" role="img" aria-label="Información nutrimental del método: entiende, nutre y funciona al 100 por ciento; restricción, culpa y dietas milagro en cero">
         <div class="t">Información nutrimental</div>
         <div>Método Fuel to Function</div>
@@ -641,19 +757,19 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
   <section class="w sec" aria-labelledby="explora">
     <div class="sh"><h2 class="xcnd" id="explora">Elige tu presentación</h2><p>Trabaja uno a uno con Ana o aprende a tu ritmo. Toca una caja para entrar.</p></div>
     <div class="shelf">
-      <a class="box c-serv" href="/servicios/">
-        <div class="face"><img class="fill" src="/img/ana-consulta.jpg" alt="Ana Yepez en consulta nutricional midiendo la composición corporal de una paciente" width="1067" height="1600" loading="lazy" style="object-position:62% 35%"></div>
+      <a class="box c-serv" href="#servicios">
+        <div class="face"><img class="fill" src="img/ana-consulta.jpg" alt="Ana Yepez en consulta nutricional midiendo la composición corporal de una paciente" width="1067" height="1600" loading="lazy" style="object-position:62% 35%"></div>
         <div class="info"><span class="n">Servicios</span><span class="bar"></span><span class="d">Valoración InBody, consulta, entrenamiento y programa integral.</span><span class="go"><span>Ver servicios y precios</span><span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="box c-ebook" href="/ebooks/">
+      <a class="box c-ebook" href="#ebooks">
         <div class="face cover-face"><span class="ba">Fuel to Function · Ebook</span><span class="bt">Comida que funciona</span><span class="ba">Guía + recetas</span><span class="oct" aria-hidden="true"><span><small>Muy</small>pronto</span></span></div>
         <div class="info"><span class="n">Ebooks</span><span class="bar"></span><span class="d">Guías y recetas para comer mejor en casa.</span><span class="go"><span>Ver ebooks</span><span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="box c-reto" href="/retos/">
-        <div class="face"><img class="fill" src="/img/ana-sentadilla.jpg" alt="Ana Yepez haciendo sentadilla con banda de resistencia" width="1066" height="1600" loading="lazy" style="object-position:center 42%"><span class="oct" aria-hidden="true"><span><small>Muy</small>pronto</span></span></div>
+      <a class="box c-reto" href="#retos">
+        <div class="face"><img class="fill" src="img/ana-sentadilla.jpg" alt="Ana Yepez haciendo sentadilla con banda de resistencia" width="1066" height="1600" loading="lazy" style="object-position:center 42%"></div>
         <div class="info"><span class="n">Retos</span><span class="bar"></span><span class="d">Programas con inicio y fin para ganar fuerza y hábitos.</span><span class="go"><span>Ver retos</span><span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="box c-plan" href="/planes/">
+      <a class="box c-plan" href="#planes">
         <div class="face menu-face" role="img" aria-label="Ilustración de un plan semanal">
           <span class="ba">Fuel to Function · Plan</span>
           <span class="bt">Plan semanal</span>
@@ -668,16 +784,557 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
   <section class="close">
     <div class="w">
       <h2 class="xcnd">La comida es tu <span>aliada.</span></h2>
-      <a class="oct octbtn" href="/agenda/"><span><small>Agenda</small>tu consulta</span></a>
+      <a class="oct octbtn" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener"><span><small>Agenda por</small>WhatsApp</span></a>
     </div>
   </section>
 </main>
+
+<!-- ================= SERVICIOS ================= -->
+<main data-view="servicios" hidden>
+  <header class="ph-head ancla">
+    <div class="w">
+      <h1 class="xcnd">Servicios</h1>
+      <div class="meta"><span class="lbl">Inicio / Servicios</span><p>Consulta presencial en Cancún u online para quienes están fuera de la ciudad. Entrenamiento 1:1 en casa o gimnasio.</p><a class="btn" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener">Agenda tu consulta</a></div>
+    </div>
+  </header>
+  <section class="w sec">
+    <div class="labels">
+      <article class="label">
+        <div class="n">Valoración InBody</div><div class="bar"></div>
+        <div class="r"><span>Porción</span><span>1 sesión</span></div>
+        <div class="contains"><b>Contiene:</b> medición de músculo, grasa y agua; tu punto de partida y metas claras.</div>
+        <div class="price"><b data-precio="inbody">$500</b><span>MXN<br>por sesión</span></div>
+        <a class="go" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20valoraci%C3%B3n%20InBody." target="_blank" rel="noopener">Agendar por WhatsApp</a>
+      </article>
+      <article class="label">
+        <div class="n">Consulta nutricional</div><div class="bar"></div>
+        <div class="r"><span>Porción</span><span>presencial u online</span></div>
+        <div class="contains"><b>Contiene:</b> valoración InBody y plan nutricional a tu medida. Seguimiento al mismo precio.</div>
+        <div class="price"><b data-precio="consulta">$1,000</b><span>MXN<br>por consulta</span></div>
+        <a class="go" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta%20nutricional." target="_blank" rel="noopener">Agendar por WhatsApp</a>
+      </article>
+      <article class="label">
+        <div class="n">Plan de entrenamiento</div><div class="bar"></div>
+        <div class="r"><span>Porción</span><span>cada 4 semanas</span></div>
+        <div class="contains"><b>Contiene:</b> plan autónomo para casa o gimnasio. Entrenamiento 1:1 a consultar.</div>
+        <div class="price"><b data-precio="entrenamiento">$700</b><span>MXN<br>por plan</span></div>
+        <a class="go" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20un%20plan%20de%20entrenamiento." target="_blank" rel="noopener">Agendar por WhatsApp</a>
+      </article>
+      <article class="label">
+        <div class="sticker" aria-hidden="true" data-ahorro><span><small>Ahorras</small><span data-ahorro-monto>$200</span></span></div>
+        <div class="n">Programa integral</div><div class="bar"></div>
+        <div class="r"><span>Porción</span><span>nutrición + entreno</span></div>
+        <div class="contains"><b>Contiene:</b> consulta nutricional y plan de entrenamiento, trabajando en equipo.</div>
+        <div class="price"><b data-precio="integral">$1,500</b><span>MXN<br>paquete</span></div>
+        <a class="go" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20me%20interesa%20el%20programa%20integral." target="_blank" rel="noopener">Agendar por WhatsApp</a>
+      </article>
+    </div>
+  </section>
+  <section class="w sec" style="padding-top:0" aria-labelledby="uso">
+    <div class="sh"><h2 class="xcnd" id="uso">Modo de empleo</h2><p>Lo que puedes esperar en tus primeras cuatro semanas.</p></div>
+    <div class="uso">
+      <div>
+        <ol>
+          <li><div><h3>Valoración</h3><p>Medimos tu composición corporal con InBody. Sales con tu punto de partida y metas claras.</p></div></li>
+          <li><div><h3>Tu plan</h3><p>Aprendes a armar comidas con base en porciones, con todos los grupos de alimentos, y entiendes tus macronutrientes.</p></div></li>
+          <li><div><h3>Resultados</h3><p>Sientes energía, vitalidad y flexibilidad. Ajustamos en cada seguimiento según tu progreso real.</p></div></li>
+        </ol>
+        <p class="keep lbl">Consérvese con seguimiento mensual. No requiere dietas restrictivas.</p>
+      </div>
+      <figure><img class="fill" src="img/ana-consulta.jpg" alt="Ana Yepez midiendo la composición corporal de una paciente con InBody" width="1067" height="1600" loading="lazy" style="object-position:62% 35%"><figcaption class="lbl">Consulta · Cancún</figcaption></figure>
+    </div>
+  </section>
+  <section class="oye sec" aria-labelledby="oye">
+    <div class="w">
+      <h2 class="xcnd" id="oye">Lo que escucho en consulta</h2>
+      <ul>
+        <li>Ya probé de todo y nada me funciona.</li>
+        <li>Bajo de peso, pero luego lo recupero todo.</li>
+        <li>Veo tanto en redes que ya me confundí.</li>
+        <li>Siento culpa cuando como algo que me gusta.</li>
+      </ul>
+      <div class="answer"><p>Aquí no vas a hacer otra dieta. Vas a aprender a comer para funcionar.</p><a class="btn" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener">Agenda por WhatsApp</a></div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= EBOOKS ================= -->
+<main data-view="ebooks" hidden>
+  <header class="ph-head rosa">
+    <div class="w">
+      <h1 class="xcnd">Ebooks</h1>
+      <div class="meta"><span class="lbl">Tienda / Ebooks</span><p>Guías para comer mejor en casa, a tu ritmo y aunque no vayas a consulta.</p><span class="lbl" data-count="ebook"></span></div>
+    </div>
+  </header>
+  <section class="w sec">
+    <div class="ebook">
+      <div class="book" role="img" aria-label="Portada del ebook Comida que Funciona">
+        <span class="ba">Fuel to Function · Ebook</span>
+        <span class="bt">Comida que funciona</span>
+        <span class="ba">Guía + recetas para casa</span>
+        <div class="oct" aria-hidden="true"><span><small>Muy</small>pronto</span></div>
+      </div>
+      <div class="txt">
+        <span class="lbl">Nuevo producto · En desarrollo</span>
+        <h2 class="xcnd">Comida que Funciona</h2>
+        <p>Una guía para llevar una alimentación más balanceada, con recetas saludables para cocinar en casa. Para disfrutar de comer bien aunque no vayas a consulta.</p>
+        <dl><dt>Formato</dt><dd>PDF descargable</dd><dt>Contiene</dt><dd>Guía de alimentación balanceada y recetas</dd><dt>Disponible</dt><dd>Próximamente</dd></dl>
+        <div><a class="btn" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20av%C3%ADsame%20cuando%20salga%20el%20ebook%20Comida%20que%20Funciona." target="_blank" rel="noopener">Avísame por WhatsApp</a></div>
+      </div>
+    </div>
+  </section>
+  <section class="shop sec">
+    <div class="w"><div class="sh"><h2 class="xcnd">Todos los ebooks</h2><p>Los nuevos títulos aparecen aquí en cuanto Ana los publica.</p></div><div class="grid" data-grid="ebook"></div></div>
+  </section>
+</main>
+
+<!-- ================= RETOS ================= -->
+<main data-view="retos" hidden>
+  <header class="ph-head celeste">
+    <div class="w">
+      <h1 class="xcnd">Retos</h1>
+      <div class="meta"><span class="lbl">Tienda / Retos fitness</span><p>Programas con inicio y fin para comer mejor, ganar fuerza y construir hábitos que te duren toda la vida. Sin dietas restrictivas, sin culpa y sin milagros.</p>
+        <div class="row"><a class="btn" href="#retos" data-scroll="rt-elige">Elige tu reto</a><a class="btn line" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20tengo%20una%20pregunta%20sobre%20los%20retos." target="_blank" rel="noopener">Pregúntale por WhatsApp</a></div></div>
+    </div>
+  </header>
+
+  <section class="w sec" id="rt-elige" aria-labelledby="rt-elige-h">
+    <div class="sh"><h2 class="xcnd" id="rt-elige-h">Elige tu <span class="mk">reto</span></h2><p>Tres presentaciones: comida, entrenamiento o las dos juntas. Cada una tiene un sistema claro y un punto de llegada que puedes medir.</p></div>
+    <div class="labels three">
+      <article class="label">
+        <div class="n" data-reto="Reto 30 · Comida Real &amp; Bases">Reto 30 · Comida Real &amp; Bases</div><div class="bar"></div>
+        <div class="r"><span>Duración</span><span>30 días</span></div>
+        <div class="r"><span>Enfoque</span><span>Alimentación</span></div>
+        <div class="r"><span>Estructura</span><span>2 bases + 12 hábitos</span></div>
+        <div class="contains"><b>Contiene:</b> el plato saludable, la lista del súper, ejemplos de comidas, 12 hábitos acumulativos y un habit tracker semanal.</div>
+        <div class="price"><b class="soon">Próximamente</b><span>Ideal para<br>empezar</span></div>
+        <a class="go" href="#retos" data-scroll="rt-30">Ver el reto de 30 días →</a>
+      </article>
+      <article class="label">
+        <div class="n" data-reto="Reto 65 · Fuerza funcional">Reto 65 · Fuerza funcional</div><div class="bar"></div>
+        <div class="r"><span>Duración</span><span>65 días</span></div>
+        <div class="r"><span>Enfoque</span><span>Entrenamiento</span></div>
+        <div class="r"><span>Frecuencia</span><span>3 a 5 sesiones por semana</span></div>
+        <div class="contains"><b>Contiene:</b> test inicial y final, 3 bloques progresivos, sesiones para casa o gimnasio y un workout final.</div>
+        <div class="price"><b class="soon">Próximamente</b><span>Principiante<br>e intermedio</span></div>
+        <a class="go" href="#retos" data-scroll="rt-65">Ver el reto de 65 días →</a>
+      </article>
+      <article class="label">
+        <div class="sticker" aria-hidden="true"><span><small>El más</small>completo</span></div>
+        <div class="n" data-reto="Reto 120 · Fuel to Function">Reto 120 · Fuel to Function</div><div class="bar"></div>
+        <div class="r"><span>Duración</span><span>120 días</span></div>
+        <div class="r"><span>Enfoque</span><span>Nutrición + entrenamiento</span></div>
+        <div class="r"><span>Seguimiento</span><span>Individual, con Ana</span></div>
+        <div class="contains"><b>Contiene:</b> plan nutricional a tu medida, valoraciones InBody, los dos retos anteriores integrados y un evento final.</div>
+        <div class="price"><b class="soon">Próximamente</b><span>Cancún<br>u online</span></div>
+        <a class="go" href="#retos" data-scroll="rt-120">Ver el reto de 120 días →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ---------- Reto 30 · Comida Real & Bases (contenido de Ana, 2026-11-24) ---------- -->
+  <div class="rt-band white" id="rt-30">
+    <section class="w sec" aria-labelledby="rt-30-h">
+      <div class="sh"><h2 class="xcnd" id="rt-30-h">30 días · <span class="mk">Comida Real &amp; Bases</span></h2><p><span class="lbl">Reto 01 · 30 días · 12 hábitos · 2 bases</span><br>Aprende a armar tu plato, haz tu súper con intención y acumula 12 hábitos reales sin dietas extremas. Sin contar calorías ni complicarte de más.</p></div>
+
+      <div class="bienv rt-mb">
+        <span class="lbl">01 · Bienvenida</span>
+        <h3 class="rt-h3">Deja de empezar cada lunes</h3>
+        <p>Empezar de nuevo cada lunes cansa. Restringirte por completo hasta que llega el rebote o la culpa tampoco funciona.</p>
+        <p>Este reto te da un sistema claro, práctico y sostenible: primero dominas las dos bases —tu plato y tu súper— y, semana a semana, sumas 3 hábitos acumulativos hasta llegar al día 30 con <span class="mk">12 hábitos integrados a tu ritmo de vida</span>.</p>
+      </div>
+
+      <span class="lbl">02 · Base 1</span>
+      <h3 class="rt-h3">El plato saludable</h3>
+      <p class="rt-intro">No necesitas pesar cada gramo. Usa tu plato como guía visual para equilibrar volumen, estructura, energía y saciedad.</p>
+      <div class="plato" aria-label="Cómo se arma el plato saludable">
+        <div class="v"><span class="lbl">½ plato</span><b>Verduras</b><p>Crudas, asadas, al vapor o en ensalada. Dan volumen, fibra y saciedad sin complicarte.</p></div>
+        <div class="p"><span class="lbl">¼ plato</span><b>Proteína</b><p>Pollo, huevo, pescado, atún, carne magra, tofu, yogurt griego/skyr o queso cottage.</p></div>
+        <div class="c"><span class="lbl">¼ plato</span><b>Carbohidrato</b><p>Arroz, papa, camote, tortilla de maíz, avena o pan integral.</p></div>
+        <div class="g"><span class="lbl">Toque</span><b>Grasa saludable</b><p>Aguacate, aceite de oliva extra virgen, nueces, almendras, semillas.</p></div>
+      </div>
+
+      <span class="lbl">03 · Base 2</span>
+      <h3 class="rt-h3">La lista del súper</h3>
+      <p class="rt-intro">Haz tu compra antes del Día 1 con estas categorías para tener lo necesario en casa y evitar improvisar.</p>
+      <div class="super">
+        <div class="grp g-v"><h4>Verduras</h4><ul><li>Lechuga</li><li>Espinacas</li><li>Pepino</li><li>Jitomate</li><li>Calabacitas</li><li>Brócoli</li><li>Zanahoria</li><li>Cebolla</li><li>Ajo</li><li>Limón</li></ul></div>
+        <div class="grp g-p"><h4>Proteínas</h4><ul><li>Huevos</li><li>Pechuga de pollo</li><li>Pechuga de pavo</li><li>Pescado o atún</li><li>Carne magra</li><li>Tofu</li><li>Yogurt griego o skyr</li><li>Queso cottage</li></ul></div>
+        <div class="grp g-c"><h4>Carbohidratos</h4><ul><li>Arroz</li><li>Avena</li><li>Papa</li><li>Camote</li><li>Tortillas de maíz</li><li>Pan integral o masa madre</li><li>Frutas de temporada</li></ul></div>
+        <div class="grp g-a"><h4>Grasas saludables</h4><ul><li>Aguacate</li><li>Aceite de oliva extra virgen</li><li>Nueces</li><li>Almendras</li><li>Semillas (chía, linaza)</li><li>Crema de cacahuate natural</li></ul></div>
+        <div class="grp g-g"><h4>Especias y condimentos</h4><ul><li>Sal</li><li>Pimienta</li><li>Ajo en polvo</li><li>Orégano</li><li>Comino</li><li>Canela</li><li>Chile o especias al gusto</li><li>Vinagre</li></ul></div>
+        <div class="grp g-g"><h4>Alacena y bebidas</h4><ul><li>Agua natural</li><li>Agua mineral</li><li>Café o té sin azúcar</li><li>Caldos o bases sencillas</li></ul></div>
+      </div>
+      <p class="nota rt-mb"><b>Nota:</b> no necesitas comprar todo. Decide qué quieres comer esta semana y compra solo lo necesario.</p>
+
+      <span class="lbl">04 · Ejemplos</span>
+      <h3 class="rt-h3">Comidas para guiarte</h3>
+      <p class="rt-intro">Ideas para aplicar tu plato en cada momento del día.</p>
+      <div class="comidas rt-mb">
+        <article class="ses"><span class="lbl">Mañana</span><h4>Desayunos</h4><ul>
+          <li><b>Yogurt griego o skyr con fruta.</b> Yogurt sin azúcar con fruta fresca (frutos rojos, plátano o manzana) y un toque de semillas o nueces.</li>
+          <li><b>Huevos con verduras.</b> Revueltos, en omelette o estrellados con espinacas, jitomate, cebolla o calabacita, más tortilla o pan integral según tu hambre y actividad.</li>
+          <li><b>Sándwich con pollo.</b> Pan integral o de masa madre con pollo, verdura fresca y un toque de aguacate o aderezo ligero.</li></ul></article>
+        <article class="ses"><span class="lbl">Mediodía</span><h4>Comida</h4><p>Plato completo: proteína + carbohidrato + verduras + grasa.</p><ul>
+          <li>Pechuga, pescado o carne a la plancha</li><li>Papa, camote o arroz cocido</li><li>Ensalada o verduras asadas</li><li>Aguacate, aceite de oliva</li></ul></article>
+        <article class="ses"><span class="lbl">Noche</span><h4>Cena</h4><p>Ligera y práctica: proteína + carbohidrato + verduras + grasa.</p><ul>
+          <li>Atún, pescado, huevos o pavo</li><li>Tortilla de maíz o Salmas</li><li>Ensalada o verduras al vapor o asadas</li><li>Aguacate, aceite de oliva</li></ul></article>
+        <article class="ses fz"><span class="lbl">Entre comidas</span><h4>Snacks</h4><p>Fórmula: proteína + fibra. Algunas ideas:</p><ul>
+          <li>Yogurt griego + fruta de tu preferencia + nueces.</li><li>Verduras + hummus.</li><li>Manzana o jícama + Tajín.</li></ul></article>
+      </div>
+
+      <span class="lbl">05 · El reto</span>
+      <h3 class="rt-h3">12 hábitos acumulativos</h3>
+      <p class="rt-intro">Cada semana sumas 3 hábitos nuevos sin soltar los anteriores. Para el Día 30 tendrás 12 hábitos clave activos.</p>
+      <div class="semanas cuatro">
+        <article class="sem">
+          <span class="lbl">Semana 1 · Hábitos 1–3</span><h3>Arrancar</h3><p class="sem-p">Arrancar bien y anclar el plato.</p>
+          <ol class="dias hab">
+            <li><b>01</b><span><strong>Agua al despertar.</strong> Un vaso de agua natural antes de tu café o desayuno.</span></li>
+            <li><b>02</b><span><strong>Proteína en tu primera comida.</strong> Huevo, yogurt griego/skyr, cottage, pollo, atún o batido.</span></li>
+            <li><b>03</b><span><strong>Medio plato de verduras</strong> en tu comida principal.</span></li>
+          </ol>
+        </article>
+        <article class="sem">
+          <span class="lbl">Semana 2 · Hábitos 4–6</span><h3>Presencia</h3><p class="sem-p">Limpiar bebidas y comer presente.</p>
+          <ol class="dias hab">
+            <li><b>04</b><span><strong>Cero bebidas azucaradas entre semana:</strong> agua, mineral o té/café sin azúcar.</span></li>
+            <li><b>05</b><span><strong>Una comida sin pantallas al día</strong> para conectar con tu hambre y saciedad.</span></li>
+            <li><b>06</b><span><strong>Mastica con calma.</strong> Deja los cubiertos entre bocados y baja el ritmo.</span></li>
+          </ol>
+        </article>
+        <article class="sem">
+          <span class="lbl">Semana 3 · Hábitos 7–9</span><h3>Día a día</h3><p class="sem-p">Resolver el día a día y la fricción.</p>
+          <ol class="dias hab">
+            <li><b>07</b><span><strong>Mini pre-prep de 45–60 min:</strong> lava y pica verduras o cocina una proteína base.</span></li>
+            <li><b>08</b><span><strong>Snacks con proteína + fibra</strong> en lugar de picar solo harinas o dulces.</span></li>
+            <li><b>09</b><span><strong>Plan B listo para días ocupados:</strong> qué comer o pedir, decidido de antemano.</span></li>
+          </ol>
+        </article>
+        <article class="sem fin">
+          <span class="lbl">Semana 4 · Hábitos 10–12</span><h3>Cierre</h3><p class="sem-p">Cierre nocturno, flexibilidad y ajuste.</p>
+          <ol class="dias hab">
+            <li><b>10</b><span><strong>Cena ligero y apaga pantallas</strong> 30 min antes de dormir.</span></li>
+            <li><b>11</b><span><strong>80/20 sin culpa</strong> en salidas o antojos; vuelve a tu plato en la siguiente comida.</span></li>
+            <li><b>12</b><span><strong>Check-in de 5 min cada domingo:</strong> energía, digestión, sueño y qué ajustar.</span></li>
+          </ol>
+          <div class="oct" aria-hidden="true"><span><small>Día 30</small>12 hábitos</span></div>
+        </article>
+      </div>
+
+      <span class="lbl">06 · Seguimiento</span>
+      <h3 class="rt-h3">Habit tracker semanal</h3>
+      <p class="rt-intro">Marca cada día que cumplas. Los hábitos de semanas anteriores se quedan activos. Tus marcas se guardan en este navegador.</p>
+      <div class="tracker rt-mb">
+        <div class="trk trk-s1">
+          <div class="trk-h">Semana 1 · Hábitos 1–3</div>
+          <div class="trk-wrap"><table>
+            <thead><tr><td></td><th scope="col"><abbr title="lunes">L</abbr></th><th scope="col"><abbr title="martes">M</abbr></th><th scope="col"><abbr title="miércoles">M</abbr></th><th scope="col"><abbr title="jueves">J</abbr></th><th scope="col"><abbr title="viernes">V</abbr></th><th scope="col"><abbr title="sábado">S</abbr></th><th scope="col"><abbr title="domingo">D</abbr></th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1. Agua al despertar</th><td><input type="checkbox" data-track="s1-0-0" aria-label="1. Agua al despertar, lunes"></td><td><input type="checkbox" data-track="s1-0-1" aria-label="1. Agua al despertar, martes"></td><td><input type="checkbox" data-track="s1-0-2" aria-label="1. Agua al despertar, miércoles"></td><td><input type="checkbox" data-track="s1-0-3" aria-label="1. Agua al despertar, jueves"></td><td><input type="checkbox" data-track="s1-0-4" aria-label="1. Agua al despertar, viernes"></td><td><input type="checkbox" data-track="s1-0-5" aria-label="1. Agua al despertar, sábado"></td><td><input type="checkbox" data-track="s1-0-6" aria-label="1. Agua al despertar, domingo"></td></tr>
+              <tr><th scope="row">2. Proteína en desayuno</th><td><input type="checkbox" data-track="s1-1-0" aria-label="2. Proteína en desayuno, lunes"></td><td><input type="checkbox" data-track="s1-1-1" aria-label="2. Proteína en desayuno, martes"></td><td><input type="checkbox" data-track="s1-1-2" aria-label="2. Proteína en desayuno, miércoles"></td><td><input type="checkbox" data-track="s1-1-3" aria-label="2. Proteína en desayuno, jueves"></td><td><input type="checkbox" data-track="s1-1-4" aria-label="2. Proteína en desayuno, viernes"></td><td><input type="checkbox" data-track="s1-1-5" aria-label="2. Proteína en desayuno, sábado"></td><td><input type="checkbox" data-track="s1-1-6" aria-label="2. Proteína en desayuno, domingo"></td></tr>
+              <tr><th scope="row">3. ½ plato de verduras</th><td><input type="checkbox" data-track="s1-2-0" aria-label="3. ½ plato de verduras, lunes"></td><td><input type="checkbox" data-track="s1-2-1" aria-label="3. ½ plato de verduras, martes"></td><td><input type="checkbox" data-track="s1-2-2" aria-label="3. ½ plato de verduras, miércoles"></td><td><input type="checkbox" data-track="s1-2-3" aria-label="3. ½ plato de verduras, jueves"></td><td><input type="checkbox" data-track="s1-2-4" aria-label="3. ½ plato de verduras, viernes"></td><td><input type="checkbox" data-track="s1-2-5" aria-label="3. ½ plato de verduras, sábado"></td><td><input type="checkbox" data-track="s1-2-6" aria-label="3. ½ plato de verduras, domingo"></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="trk trk-s2">
+          <div class="trk-h">Semana 2 · Suma 4–6</div>
+          <div class="trk-wrap"><table>
+            <thead><tr><td></td><th scope="col"><abbr title="lunes">L</abbr></th><th scope="col"><abbr title="martes">M</abbr></th><th scope="col"><abbr title="miércoles">M</abbr></th><th scope="col"><abbr title="jueves">J</abbr></th><th scope="col"><abbr title="viernes">V</abbr></th><th scope="col"><abbr title="sábado">S</abbr></th><th scope="col"><abbr title="domingo">D</abbr></th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1–3. Hábitos de semana 1</th><td><input type="checkbox" data-track="s2-0-0" aria-label="1–3. Hábitos de semana 1, lunes"></td><td><input type="checkbox" data-track="s2-0-1" aria-label="1–3. Hábitos de semana 1, martes"></td><td><input type="checkbox" data-track="s2-0-2" aria-label="1–3. Hábitos de semana 1, miércoles"></td><td><input type="checkbox" data-track="s2-0-3" aria-label="1–3. Hábitos de semana 1, jueves"></td><td><input type="checkbox" data-track="s2-0-4" aria-label="1–3. Hábitos de semana 1, viernes"></td><td><input type="checkbox" data-track="s2-0-5" aria-label="1–3. Hábitos de semana 1, sábado"></td><td><input type="checkbox" data-track="s2-0-6" aria-label="1–3. Hábitos de semana 1, domingo"></td></tr>
+              <tr><th scope="row">4. Cero bebidas azucaradas</th><td><input type="checkbox" data-track="s2-1-0" aria-label="4. Cero bebidas azucaradas, lunes"></td><td><input type="checkbox" data-track="s2-1-1" aria-label="4. Cero bebidas azucaradas, martes"></td><td><input type="checkbox" data-track="s2-1-2" aria-label="4. Cero bebidas azucaradas, miércoles"></td><td><input type="checkbox" data-track="s2-1-3" aria-label="4. Cero bebidas azucaradas, jueves"></td><td><input type="checkbox" data-track="s2-1-4" aria-label="4. Cero bebidas azucaradas, viernes"></td><td><input type="checkbox" data-track="s2-1-5" aria-label="4. Cero bebidas azucaradas, sábado"></td><td><input type="checkbox" data-track="s2-1-6" aria-label="4. Cero bebidas azucaradas, domingo"></td></tr>
+              <tr><th scope="row">5. 1 comida sin pantallas</th><td><input type="checkbox" data-track="s2-2-0" aria-label="5. 1 comida sin pantallas, lunes"></td><td><input type="checkbox" data-track="s2-2-1" aria-label="5. 1 comida sin pantallas, martes"></td><td><input type="checkbox" data-track="s2-2-2" aria-label="5. 1 comida sin pantallas, miércoles"></td><td><input type="checkbox" data-track="s2-2-3" aria-label="5. 1 comida sin pantallas, jueves"></td><td><input type="checkbox" data-track="s2-2-4" aria-label="5. 1 comida sin pantallas, viernes"></td><td><input type="checkbox" data-track="s2-2-5" aria-label="5. 1 comida sin pantallas, sábado"></td><td><input type="checkbox" data-track="s2-2-6" aria-label="5. 1 comida sin pantallas, domingo"></td></tr>
+              <tr><th scope="row">6. Masticar con calma</th><td><input type="checkbox" data-track="s2-3-0" aria-label="6. Masticar con calma, lunes"></td><td><input type="checkbox" data-track="s2-3-1" aria-label="6. Masticar con calma, martes"></td><td><input type="checkbox" data-track="s2-3-2" aria-label="6. Masticar con calma, miércoles"></td><td><input type="checkbox" data-track="s2-3-3" aria-label="6. Masticar con calma, jueves"></td><td><input type="checkbox" data-track="s2-3-4" aria-label="6. Masticar con calma, viernes"></td><td><input type="checkbox" data-track="s2-3-5" aria-label="6. Masticar con calma, sábado"></td><td><input type="checkbox" data-track="s2-3-6" aria-label="6. Masticar con calma, domingo"></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="trk trk-s3">
+          <div class="trk-h">Semana 3 · Suma 7–9</div>
+          <div class="trk-wrap"><table>
+            <thead><tr><td></td><th scope="col"><abbr title="lunes">L</abbr></th><th scope="col"><abbr title="martes">M</abbr></th><th scope="col"><abbr title="miércoles">M</abbr></th><th scope="col"><abbr title="jueves">J</abbr></th><th scope="col"><abbr title="viernes">V</abbr></th><th scope="col"><abbr title="sábado">S</abbr></th><th scope="col"><abbr title="domingo">D</abbr></th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1–6. Hábitos anteriores</th><td><input type="checkbox" data-track="s3-0-0" aria-label="1–6. Hábitos anteriores, lunes"></td><td><input type="checkbox" data-track="s3-0-1" aria-label="1–6. Hábitos anteriores, martes"></td><td><input type="checkbox" data-track="s3-0-2" aria-label="1–6. Hábitos anteriores, miércoles"></td><td><input type="checkbox" data-track="s3-0-3" aria-label="1–6. Hábitos anteriores, jueves"></td><td><input type="checkbox" data-track="s3-0-4" aria-label="1–6. Hábitos anteriores, viernes"></td><td><input type="checkbox" data-track="s3-0-5" aria-label="1–6. Hábitos anteriores, sábado"></td><td><input type="checkbox" data-track="s3-0-6" aria-label="1–6. Hábitos anteriores, domingo"></td></tr>
+              <tr><th scope="row">7. Mini pre-prep (45–60 min)</th><td><input type="checkbox" data-track="s3-1-0" aria-label="7. Mini pre-prep (45–60 min), lunes"></td><td><input type="checkbox" data-track="s3-1-1" aria-label="7. Mini pre-prep (45–60 min), martes"></td><td><input type="checkbox" data-track="s3-1-2" aria-label="7. Mini pre-prep (45–60 min), miércoles"></td><td><input type="checkbox" data-track="s3-1-3" aria-label="7. Mini pre-prep (45–60 min), jueves"></td><td><input type="checkbox" data-track="s3-1-4" aria-label="7. Mini pre-prep (45–60 min), viernes"></td><td><input type="checkbox" data-track="s3-1-5" aria-label="7. Mini pre-prep (45–60 min), sábado"></td><td><input type="checkbox" data-track="s3-1-6" aria-label="7. Mini pre-prep (45–60 min), domingo"></td></tr>
+              <tr><th scope="row">8. Snack proteína + fibra</th><td><input type="checkbox" data-track="s3-2-0" aria-label="8. Snack proteína + fibra, lunes"></td><td><input type="checkbox" data-track="s3-2-1" aria-label="8. Snack proteína + fibra, martes"></td><td><input type="checkbox" data-track="s3-2-2" aria-label="8. Snack proteína + fibra, miércoles"></td><td><input type="checkbox" data-track="s3-2-3" aria-label="8. Snack proteína + fibra, jueves"></td><td><input type="checkbox" data-track="s3-2-4" aria-label="8. Snack proteína + fibra, viernes"></td><td><input type="checkbox" data-track="s3-2-5" aria-label="8. Snack proteína + fibra, sábado"></td><td><input type="checkbox" data-track="s3-2-6" aria-label="8. Snack proteína + fibra, domingo"></td></tr>
+              <tr><th scope="row">9. Plan B para días pesados</th><td><input type="checkbox" data-track="s3-3-0" aria-label="9. Plan B para días pesados, lunes"></td><td><input type="checkbox" data-track="s3-3-1" aria-label="9. Plan B para días pesados, martes"></td><td><input type="checkbox" data-track="s3-3-2" aria-label="9. Plan B para días pesados, miércoles"></td><td><input type="checkbox" data-track="s3-3-3" aria-label="9. Plan B para días pesados, jueves"></td><td><input type="checkbox" data-track="s3-3-4" aria-label="9. Plan B para días pesados, viernes"></td><td><input type="checkbox" data-track="s3-3-5" aria-label="9. Plan B para días pesados, sábado"></td><td><input type="checkbox" data-track="s3-3-6" aria-label="9. Plan B para días pesados, domingo"></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="trk trk-s4">
+          <div class="trk-h">Semana 4 · Suma 10–12</div>
+          <div class="trk-wrap"><table>
+            <thead><tr><td></td><th scope="col"><abbr title="lunes">L</abbr></th><th scope="col"><abbr title="martes">M</abbr></th><th scope="col"><abbr title="miércoles">M</abbr></th><th scope="col"><abbr title="jueves">J</abbr></th><th scope="col"><abbr title="viernes">V</abbr></th><th scope="col"><abbr title="sábado">S</abbr></th><th scope="col"><abbr title="domingo">D</abbr></th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1–9. Hábitos anteriores</th><td><input type="checkbox" data-track="s4-0-0" aria-label="1–9. Hábitos anteriores, lunes"></td><td><input type="checkbox" data-track="s4-0-1" aria-label="1–9. Hábitos anteriores, martes"></td><td><input type="checkbox" data-track="s4-0-2" aria-label="1–9. Hábitos anteriores, miércoles"></td><td><input type="checkbox" data-track="s4-0-3" aria-label="1–9. Hábitos anteriores, jueves"></td><td><input type="checkbox" data-track="s4-0-4" aria-label="1–9. Hábitos anteriores, viernes"></td><td><input type="checkbox" data-track="s4-0-5" aria-label="1–9. Hábitos anteriores, sábado"></td><td><input type="checkbox" data-track="s4-0-6" aria-label="1–9. Hábitos anteriores, domingo"></td></tr>
+              <tr><th scope="row">10. Cena ligera + sin pantallas</th><td><input type="checkbox" data-track="s4-1-0" aria-label="10. Cena ligera + sin pantallas, lunes"></td><td><input type="checkbox" data-track="s4-1-1" aria-label="10. Cena ligera + sin pantallas, martes"></td><td><input type="checkbox" data-track="s4-1-2" aria-label="10. Cena ligera + sin pantallas, miércoles"></td><td><input type="checkbox" data-track="s4-1-3" aria-label="10. Cena ligera + sin pantallas, jueves"></td><td><input type="checkbox" data-track="s4-1-4" aria-label="10. Cena ligera + sin pantallas, viernes"></td><td><input type="checkbox" data-track="s4-1-5" aria-label="10. Cena ligera + sin pantallas, sábado"></td><td><input type="checkbox" data-track="s4-1-6" aria-label="10. Cena ligera + sin pantallas, domingo"></td></tr>
+              <tr><th scope="row">11. 80/20 sin culpa</th><td><input type="checkbox" data-track="s4-2-0" aria-label="11. 80/20 sin culpa, lunes"></td><td><input type="checkbox" data-track="s4-2-1" aria-label="11. 80/20 sin culpa, martes"></td><td><input type="checkbox" data-track="s4-2-2" aria-label="11. 80/20 sin culpa, miércoles"></td><td><input type="checkbox" data-track="s4-2-3" aria-label="11. 80/20 sin culpa, jueves"></td><td><input type="checkbox" data-track="s4-2-4" aria-label="11. 80/20 sin culpa, viernes"></td><td><input type="checkbox" data-track="s4-2-5" aria-label="11. 80/20 sin culpa, sábado"></td><td><input type="checkbox" data-track="s4-2-6" aria-label="11. 80/20 sin culpa, domingo"></td></tr>
+              <tr><th scope="row">12. Check-in domingo (5 min)</th><td><input type="checkbox" data-track="s4-3-0" aria-label="12. Check-in domingo (5 min), lunes"></td><td><input type="checkbox" data-track="s4-3-1" aria-label="12. Check-in domingo (5 min), martes"></td><td><input type="checkbox" data-track="s4-3-2" aria-label="12. Check-in domingo (5 min), miércoles"></td><td><input type="checkbox" data-track="s4-3-3" aria-label="12. Check-in domingo (5 min), jueves"></td><td><input type="checkbox" data-track="s4-3-4" aria-label="12. Check-in domingo (5 min), viernes"></td><td><input type="checkbox" data-track="s4-3-5" aria-label="12. Check-in domingo (5 min), sábado"></td><td><input type="checkbox" data-track="s4-3-6" aria-label="12. Check-in domingo (5 min), domingo"></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <div><h3>Reglas de la casa</h3>
+          <ul>
+            <li>No se cuentan calorías.</li>
+            <li>Sin dietas extremas ni alimentos prohibidos.</li>
+            <li>Los hábitos se suman, no se sueltan.</li>
+            <li>Un antojo no se compensa ni se castiga: vuelves a tu plato en la siguiente comida.</li>
+          </ul></div>
+        <div><h3>Para quién es</h3><p>Para ti si ya te cansaste de empezar cada lunes, de restringirte hasta el rebote o la culpa, y quieres un sistema claro y sostenible que se adapte a tu ritmo de vida.</p></div>
+        <div><h3>¿Listo para el día 1?</h3><p>Escríbele a Ana y empieza con tu plato y tu súper.</p><a class="btn" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20empezar%20el%20Reto%20Comida%20Real%20%26%20Bases." target="_blank" rel="noopener">Empezar el reto</a></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ---------- Reto 65 ---------- -->
+  <div class="rt-band azul" id="rt-65">
+    <section class="w sec" aria-labelledby="rt-65-h">
+      <div class="sh"><h2 class="xcnd" id="rt-65-h">65 días · <span class="mk">Fuerza funcional</span></h2><p>Entrenamiento para la vida real: levantar, empujar, jalar, cargar y moverte con energía. Tres bloques, de la técnica a la potencia, con un test al inicio y otro al final.</p></div>
+      <div class="uso rt-mb">
+        <div>
+          <ol>
+            <li><div><h3>Base · días 2 a 21</h3><p>3 sesiones de fuerza + 2 caminatas de 30 min por semana. 3 series de 10 a 12 repeticiones, esfuerzo 6–7 de 10. Aprendes la técnica de cada movimiento antes de cargar más.</p></div></li>
+            <li><div><h3>Fuerza · días 22 a 42</h3><p>4 sesiones por semana. 4 series de 6 a 10 repeticiones, esfuerzo 7–8 de 10, y un EMOM de 8 minutos al final (un ejercicio al inicio de cada minuto). La semana 6 es de descarga: 30 % menos volumen.</p></div></li>
+            <li><div><h3>Potencia · días 43 a 63</h3><p>4 sesiones + 1 opcional. Fuerza de 3 × 5–8, circuitos AMRAP de 12 a 15 minutos, intervalos 30/30 y estaciones tipo Hyrox adaptadas a tu nivel.</p></div></li>
+          </ol>
+        </div>
+        <figure><img class="fill" src="img/ana-sentadilla.jpg" alt="Ana Yepez haciendo sentadilla con banda de resistencia" width="1066" height="1600" loading="lazy" style="object-position:center 42%"><figcaption class="lbl">Técnica antes que carga</figcaption></figure>
+      </div>
+      <h3 class="rt-h3">Los 7 movimientos</h3>
+      <ul class="tags"><li>Sentadilla</li><li>Bisagra de cadera</li><li>Empuje</li><li>Jalón</li><li>Zancada</li><li>Acarreo</li><li>Core</li></ul>
+      <h3 class="rt-h3">Sesiones por bloque</h3>
+      <div class="sesiones">
+        <article class="ses"><span class="lbl">Base · A</span><h4>Pierna + empuje</h4><ul><li>Sentadilla goblet</li><li>Lagartija inclinada</li><li>Puente de glúteo con banda</li><li>Plancha frontal</li></ul></article>
+        <article class="ses"><span class="lbl">Base · B</span><h4>Bisagra + jalón</h4><ul><li>Peso muerto rumano</li><li>Remo con banda o mancuerna</li><li>Zancada hacia atrás</li><li>Dead bug</li></ul></article>
+        <article class="ses"><span class="lbl">Base · C</span><h4>Cuerpo completo</h4><ul><li>Step-up al cajón</li><li>Press de hombro</li><li>Farmer carry</li><li>Bird dog</li></ul></article>
+        <article class="ses fz"><span class="lbl">Fuerza · A–D</span><h4>Pierna · torso · posterior · completo</h4><ul><li>Sentadilla, zancada búlgara</li><li>Press de pecho, remo, jalón</li><li>Peso muerto rumano, hip thrust</li><li>Thruster + EMOM de swings, carry o remo</li></ul></article>
+        <article class="ses pt"><span class="lbl">Potencia</span><h4>Fuerza + acondicionamiento</h4><ul><li>AMRAP de 12–15 min</li><li>Intervalos 30/30</li><li>Estaciones: remo, wall balls, swings, zancadas con peso, carry</li></ul></article>
+      </div>
+      <div class="duo rt-mb">
+        <div><h3 class="rt-h3">Test · día 1 y días 64–65</h3>
+          <table class="spec">
+            <tr><th scope="row">Sentadillas</th><td>Repeticiones en 60 segundos</td></tr>
+            <tr><th scope="row">Lagartijas</th><td>Repeticiones en 60 s, completas o con rodillas apoyadas</td></tr>
+            <tr><th scope="row">Plancha</th><td>Tiempo máximo con buena técnica, tope de 2 minutos</td></tr>
+            <tr><th scope="row">Zancadas</th><td>Repeticiones alternas en 60 segundos</td></tr>
+            <tr><th scope="row">1 km</th><td>Tiempo caminando, trotando o combinando</td></tr>
+          </table></div>
+        <div><h3 class="rt-h3">Final · Workout FTF 65</h3>
+          <table class="spec">
+            <tr><th scope="row">Formato</th><td>3 a 5 rondas según tu nivel</td></tr>
+            <tr><th scope="row">Por ronda</th><td>13 sentadillas goblet · 13 remos · 13 swings · 13 lagartijas · 13 zancadas</td></tr>
+            <tr><th scope="row">Total</th><td>65 repeticiones por ronda</td></tr>
+            <tr><th scope="row">Cuándo</th><td>Día 65, después del test final</td></tr>
+          </table></div>
+      </div>
+      <div class="notes">
+        <div><h3>Reglas de seguridad</h3>
+          <ul>
+            <li>Siempre 8 minutos de calentamiento y movilidad.</li>
+            <li>Termina cada serie con 2 o 3 repeticiones «en reserva».</li>
+            <li>Dolor agudo o en una articulación: para y usa la versión más sencilla del ejercicio.</li>
+            <li>Mínimo 2 días de descanso por semana.</li>
+          </ul></div>
+        <div><h3>Qué necesitas</h3>
+          <ul>
+            <li>Bandas de resistencia y mancuernas o kettlebell, o acceso a gimnasio.</li>
+            <li>Tapete y un cajón o escalón firme.</li>
+            <li>Una libreta para anotar tus cargas.</li>
+          </ul></div>
+        <div><h3>Combustible</h3><p>Entrenar sin comer suficiente no funciona. Si quieres resultados completos, combina este reto con el de 30 días o haz el de 120.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ---------- Reto 120 ---------- -->
+  <div class="rt-band" id="rt-120">
+    <section class="w sec" aria-labelledby="rt-120-h">
+      <div class="sh"><h2 class="xcnd" id="rt-120-h">120 días · <span class="mk">Fuel to Function</span></h2><p>Nutrición y entrenamiento trabajando en equipo. Cuatro fases de 30 días en las que pasas de seguir un plan a decidir por tu cuenta, con valoraciones y seguimiento de Ana.</p></div>
+      <div class="fases">
+        <article class="fase"><span class="lbl">Días 1 a 30</span><h3>01 · Base</h3>
+          <span class="lbl">Nutrición</span><p>Tu plan nutricional a tu medida + los 12 hábitos de Comida Real &amp; Bases.</p>
+          <span class="lbl">Entreno</span><p>Bloque Base: técnica, 3 sesiones + 2 caminatas.</p>
+          <p class="hito"><b>Día 0:</b> valoración InBody, consulta y test inicial.</p></article>
+        <article class="fase"><span class="lbl">Días 31 a 60</span><h3>02 · Combustible</h3>
+          <span class="lbl">Nutrición</span><p>Entiendes tus macronutrientes y qué comer antes y después de entrenar.</p>
+          <span class="lbl">Entreno</span><p>Bloque Fuerza: 4 sesiones con progresión de cargas.</p>
+          <p class="hito"><b>Días 30 y 60:</b> seguimiento y ajuste según tu progreso real.</p></article>
+        <article class="fase"><span class="lbl">Días 61 a 90</span><h3>03 · Fuerza</h3>
+          <span class="lbl">Nutrición</span><p>Proteína y recuperación, fines de semana, viajes y comer fuera.</p>
+          <span class="lbl">Entreno</span><p>Bloque Potencia: circuitos, intervalos y estaciones tipo Hyrox.</p>
+          <p class="hito"><b>Día 90:</b> InBody de control y test parcial.</p></article>
+        <article class="fase"><span class="lbl">Días 91 a 120</span><h3>04 · Función</h3>
+          <span class="lbl">Nutrición</span><p>Autonomía: armas tus comidas sin depender del plan.</p>
+          <span class="lbl">Entreno</span><p>Preparación para el evento final: simulacro tipo Hyrox adaptado o 5K.</p>
+          <p class="hito"><b>Día 120:</b> InBody final, comparación completa y plan de mantenimiento.</p></article>
+      </div>
+      <div class="about">
+        <img class="ph" src="img/ana-consulta.jpg" alt="Ana Yepez en consulta midiendo la composición corporal de una paciente" width="1067" height="1600" loading="lazy" style="object-position:62% 35%">
+        <div class="txt">
+          <p class="big">Medimos con datos, no con la báscula: músculo, grasa y agua en cada fase.</p>
+          <table class="spec">
+            <tr><th scope="row">Valoraciones</th><td>InBody en los días 0, 30, 60, 90 y 120 (presencial en Cancún)</td></tr>
+            <tr><th scope="row">Online</th><td>Medidas, fotos y test funcional en lugar de InBody</td></tr>
+            <tr><th scope="row">Plan</th><td>Nutricional a tu medida, ajustado en cada seguimiento</td></tr>
+            <tr><th scope="row">Entreno</th><td>4 bloques progresivos para casa o gimnasio</td></tr>
+            <tr><th scope="row">Para quién</th><td>Quieres un cambio real y medible, o te preparas para una meta deportiva</td></tr>
+          </table>
+          <p>Ana corre medios maratones y compite en Hyrox: el evento final está pensado para que vivas lo que se siente llegar preparado.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="w sec" style="padding-top:0" id="rt-compara" aria-labelledby="rt-compara-h">
+    <div class="sh"><h2 class="xcnd" id="rt-compara-h">Compara</h2><p>Si dudas, empieza por el de 30 días. Si quieres el cambio completo, el de 120.</p></div>
+    <div class="cmp-wrap" role="region" aria-label="Comparación de los tres retos" tabindex="0">
+      <table class="cmp">
+        <thead><tr><th scope="col">Característica</th><th scope="col">30 · Comida Real &amp; Bases</th><th scope="col">65 · Fuerza funcional</th><th scope="col">120 · Fuel to Function</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enfoque</th><td>Alimentación</td><td>Entrenamiento</td><td>Nutrición + entrenamiento</td></tr>
+          <tr><th scope="row">Plan</th><td>2 bases + 12 hábitos acumulativos</td><td>Programa de 3 bloques</td><td>Plan nutricional a tu medida + 4 bloques</td></tr>
+          <tr><th scope="row">Tiempo</th><td>Hábitos diarios + 45–60 min de pre-prep a la semana</td><td>35 a 50 min por sesión</td><td>Sesión + registro</td></tr>
+          <tr><th scope="row">Medición</th><td>Habit tracker semanal + check-in cada domingo</td><td>Test día 1 y días 64–65</td><td>InBody o medidas en 5 momentos</td></tr>
+          <tr><th scope="row">Consulta con Ana</th><td>No incluye</td><td>No incluye</td><td>Sí, en cada fase</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="w sec" style="padding-top:0" id="rt-preguntas" aria-labelledby="rt-preguntas-h">
+    <div class="sh"><h2 class="xcnd" id="rt-preguntas-h">Preguntas</h2><p>Lo que más preguntan antes de empezar un reto.</p></div>
+    <div class="qa">
+      <div>
+        <details><summary>¿Tengo que contar calorías?</summary><p>No. Trabajas con porciones y con los 4 grupos de alimentos. En el reto de 120 días Ana hace los cálculos por ti y los convierte en comida real.</p></details>
+        <details><summary>¿Necesito gimnasio para el reto de 65 días?</summary><p>No es obligatorio. Con bandas, un par de mancuernas o una kettlebell y un tapete puedes hacerlo en casa. En el gimnasio tendrás más opciones de carga.</p></details>
+        <details><summary>¿Qué pasa si fallo un día?</summary><p>Nada. No se reinicia el reto ni se compensa. Retomas en la siguiente comida o sesión: aprender a volver también es parte del reto.</p></details>
+      </div>
+      <div>
+        <details><summary>¿Hay alimentos prohibidos?</summary><p>No. Aquí no hay restricción ni culpa: aprendes porciones y momentos para que cualquier comida quepa en tu vida.</p></details>
+        <details><summary>Nunca he entrenado, ¿puedo hacerlo?</summary><p>Sí. El primer bloque es para aprender la técnica y cada ejercicio tiene una versión más sencilla. Avanzas a tu ritmo.</p></details>
+        <details><summary>No vivo en Cancún, ¿puedo hacer el de 120 días?</summary><p>Sí, online. En lugar de InBody usamos medidas, fotos y el test funcional para seguir tu progreso.</p></details>
+      </div>
+    </div>
+    <p class="aviso"><b>Antes de empezar:</b> consulta a tu médico, sobre todo si tienes una condición médica o lesión, tomas medicamentos o estás embarazada o en lactancia; en esos casos participa solo con supervisión profesional. Los retos de 30 y 65 días son programas generales y no sustituyen una consulta ni un plan personalizado. Si sientes dolor agudo, mareo o falta de aire al entrenar, detente.</p>
+  </section>
+
+  <section class="close">
+    <div class="w">
+      <h2 class="xcnd">¿Listo para tu <span>día 1?</span></h2>
+      <a class="oct octbtn" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20empezar%20un%20reto." target="_blank" rel="noopener"><span><small>Escríbele por</small>WhatsApp</span></a>
+    </div>
+  </section>
+</main>
+
+<!-- ================= PLANES ================= -->
+<main data-view="planes" hidden>
+  <header class="ph-head amarillo">
+    <div class="w">
+      <h1 class="xcnd">Planes</h1>
+      <div class="meta"><span class="lbl">Tienda / Planes nutricionales</span><p>Planes nutricionales listos para descargar, flexibles y sin restricciones.</p><span class="lbl" data-count="plan"></span></div>
+    </div>
+  </header>
+  <section class="w sec">
+    <div class="grid" data-grid="plan"></div>
+    <div class="empty" data-empty="plan">
+      <div class="oct" aria-hidden="true"><span><small>Muy</small>pronto</span></div>
+      <div><h3>Los planes descargables vienen en camino.</h3><p>Si quieres un plan hecho para ti desde hoy, la consulta nutricional incluye valoración InBody y un plan a tu medida.</p>
+        <div class="row"><a class="btn" href="#servicios">Ver consulta nutricional</a></div></div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= TIENDA ================= -->
+<main data-view="tienda" hidden>
+  <header class="ph-head">
+    <div class="w">
+      <h1 class="xcnd">Tienda</h1>
+      <div class="meta"><span class="lbl">Inicio / Tienda</span><p>Ebooks, retos y planes para aprender a tu ritmo. Pagas y te llega el archivo al correo.</p></div>
+    </div>
+  </header>
+  <section class="w sec">
+    <div class="filters" role="group" aria-label="Filtrar productos" id="filters"></div>
+    <div class="grid" data-grid="all"></div>
+  </section>
+</main>
+
+<!-- ================= SOBRE ANA ================= -->
+<main data-view="ana" hidden>
+  <section class="w sec">
+    <div class="about">
+      <img class="ph" src="img/ana-consultorio.jpg" alt="Retrato de Ana Yepez, licenciada en Nutrición, en su consultorio" width="896" height="1100" loading="lazy">
+      <div class="txt">
+        <span class="lbl">Sobre Ana · creadora de Fuel to Function</span>
+        <h2 class="xcnd">Hola, soy Ana.</h2>
+        <p class="big">Llegué a la nutrición por un disconfort con mi propio cuerpo. Después de dietas restrictivas y profesionales poco empáticos, decidí acercarme a la comida desde el lado humano, pero también científico.</p>
+        <p>El deporte pasó por algo parecido: empezó como una forma de bajar de peso y hoy es refugio, recuperación y parte de mi estilo de vida.</p>
+        <table class="spec">
+          <tr><th scope="row">Formación</th><td>Lic. en Nutrición · Universidad Anáhuac Cancún · 2026</td></tr>
+          <tr><th scope="row">Certificación</th><td>ISSA · International Sports Sciences Association · 2024</td></tr>
+          <tr><th scope="row">Experiencia</th><td>2 años · 150 a 200 personas acompañadas</td></tr>
+          <tr><th scope="row">Deporte</th><td>Medios maratones y Hyrox</td></tr>
+          <tr><th scope="row">Atiende en</th><td>Consultorio en Cancún · Online</td></tr>
+        </table>
+        <div class="row"><a class="btn" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener">Agenda por WhatsApp</a><a class="btn line" href="https://instagram.com/nut.anayepez" target="_blank" rel="noopener">@nut.anayepez</a></div>
+      </div>
+    </div>
+  </section>
+  <section class="w sec" style="padding-top:0" aria-labelledby="accion">
+    <div class="sh"><h2 class="xcnd" id="accion">En acción</h2><p>Entrenamiento de fuerza con bandas, en sesiones personales y en grupo.</p></div>
+    <div class="gallery">
+      <figure><img class="g" src="img/ana-perfil.jpg" alt="Ana Yepez entrenando con banda de resistencia, de perfil" width="1066" height="1600" loading="lazy" style="object-position:center 30%"><figcaption><span>Fuerza con bandas</span><span>01</span></figcaption></figure>
+      <figure><img class="g" src="img/ana-bandas.jpg" alt="Ana Yepez repartiendo bandas de resistencia en una clase" width="1066" height="1600" loading="lazy" style="object-position:center 35%"><figcaption><span>Clase en grupo</span><span>02</span></figcaption></figure>
+      <figure><img class="g" src="img/ana-clase.jpg" alt="Ana Yepez preparando las bandas antes de la clase" width="1066" height="1600" loading="lazy" style="object-position:center 40%"><figcaption><span>Antes de empezar</span><span>03</span></figcaption></figure>
+    </div>
+  </section>
+  <section class="w sec" style="padding-top:0" aria-labelledby="sellos">
+    <div class="sh"><h2 class="xcnd" id="sellos">Sellos de la casa</h2><p>Lo que vas a encontrar y lo que nunca vas a encontrar aquí.</p></div>
+    <div class="claims">
+      <div class="oct yes"><span>Empática</span></div>
+      <div class="oct yes"><span>Clara</span></div>
+      <div class="oct yes"><span>Constante</span></div>
+      <div class="oct"><span><small>Cero</small>restricción</span></div>
+      <div class="oct"><span><small>Sin</small>milagros</span></div>
+      <div class="oct"><span><small>Cero</small>culpa</span></div>
+    </div>
+  </section>
+  <section class="w sec" style="padding-top:0" aria-labelledby="preg">
+    <div class="sh"><h2 class="xcnd" id="preg">Lo que más le preguntan</h2><p><a href="https://instagram.com/nut.anayepez" target="_blank" rel="noopener">Respuestas en Instagram →</a></p></div>
+    <div class="faqs">
+      <div class="faq"><span class="n">1</span>¿Qué alimentos están permitidos?</div>
+      <div class="faq"><span class="n">2</span>¿Qué como antes y después de entrenar?</div>
+      <div class="faq"><span class="n">3</span>¿La proteína en polvo me engorda?</div>
+      <div class="faq"><span class="n">4</span>¿Cómo sé si un producto es saludable?</div>
+      <div class="faq"><span class="n">5</span>¿Cómo adapto la dieta a mi vida diaria?</div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= AGENDA ================= -->
+<main data-view="agenda" hidden>
+  <header class="ph-head">
+    <div class="w">
+      <h1 class="xcnd">Agenda</h1>
+      <div class="meta"><span class="lbl">Inicio / Agenda tu consulta</span><p>Escríbele a Ana por WhatsApp o Instagram. Consultas presenciales en Cancún y online para quienes están fuera de la ciudad.</p></div>
+    </div>
+  </header>
+  <section class="w sec">
+    <div class="contact-grid">
+      <div class="cbox"><span class="lbl">Instagram</span><span class="bar"></span><span class="v">@nut.anayepez</span><div class="acts"><a class="pill solid" href="https://instagram.com/nut.anayepez" target="_blank" rel="noopener">Abrir perfil</a><button class="pill" type="button" data-copy="@nut.anayepez">Copiar</button></div></div>
+      <div class="cbox"><span class="lbl">WhatsApp</span><span class="bar"></span><span class="v" data-wa-texto>998 222 5771</span><div class="acts"><a class="pill solid" href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener">Abrir chat</a><button class="pill" type="button" data-copy="998 222 5771" data-wa-copia>Copiar</button></div></div>
+    </div>
+  </section>
+</main>
+
 <footer class="f">
   <div class="w">
     <div class="barcode"><canvas id="bc" width="400" height="128" aria-hidden="true"></canvas><span>@NUT.ANAYEPEZ</span></div>
     <div class="mid">
-      <div><b>Explora</b><a href="/servicios/">Servicios</a> · <a href="/ebooks/">Ebooks</a> · <a href="/retos/">Retos</a> · <a href="/planes/">Planes</a> · <a href="/tienda/">Tienda</a></div>
-      <div><b>Contacto</b><a href="https://instagram.com/nut.anayepez" target="_blank" rel="noopener">@nut.anayepez</a></div>
+      <div><b>Explora</b><a href="#servicios">Servicios</a> · <a href="#ebooks">Ebooks</a> · <a href="#retos">Retos</a> · <a href="#planes">Planes</a> · <a href="#tienda">Tienda</a></div>
+      <div><b>Contacto</b><a href="https://instagram.com/nut.anayepez" target="_blank" rel="noopener">@nut.anayepez</a> · <a href="https://wa.me/529982225771?text=Hola%20Ana%2C%20quiero%20agendar%20una%20consulta." target="_blank" rel="noopener">WhatsApp <span data-wa-texto>998 222 5771</span></a></div>
       <div><b>Hecho en</b>Cancún, Quintana Roo</div>
       <div><b>© 2026</b>Fuel to Function by Ana Yepez</div>
     </div>
@@ -696,13 +1353,16 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
   </div>
 </aside>
 
-<script>window.FTF_PAGE="inicio";</script>
 <script>
 (function(){
   var CATS={ebook:"Ebook",reto:"Reto fitness",plan:"Plan nutricional"};
-  var products=[{id:1,type:"ebook",title:"Comida que Funciona",spec:"Guía de alimentación balanceada + recetas",price:null},{id:2,type:"reto",title:"Reto 30 · Comida real",spec:"30 acciones diarias para comer mejor",price:null},{id:3,type:"reto",title:"Reto 65 · Fuerza funcional",spec:"Entrenamiento progresivo en 3 bloques",price:null},{id:4,type:"reto",title:"Reto 120 · Fuel to Function",spec:"Nutrición + entrenamiento con seguimiento",price:null}];
-  var VIEWS=["inicio","servicios","ebooks","retos","planes","tienda","ana","agenda","panel"];
-  var TYPE_VIEW={ebook:"ebooks",reto:"retos",plan:"planes"};
+  var products=[{id:1,type:"ebook",title:"Comida que Funciona",spec:"Guía de alimentación balanceada + recetas",price:null},
+    {id:2,type:"reto",title:"Reto 30 · Comida Real & Bases",spec:"30 días · 12 hábitos · 2 bases",price:null},
+    {id:3,type:"reto",title:"Reto 65 · Fuerza funcional",spec:"65 días · entrenamiento · 3 a 5 sesiones por semana",price:null},
+    {id:4,type:"reto",title:"Reto 120 · Fuel to Function",spec:"120 días · nutrición + entrenamiento · seguimiento con Ana",price:null}];
+  var VIEWS=["inicio","servicios","ebooks","retos","planes","tienda","ana","agenda"];
+  var TITLES={"inicio": "Fuel to Function by Ana Yepez | Nutrición y entrenamiento en Cancún y online", "servicios": "Servicios y precios | Fuel to Function by Ana Yepez", "ebooks": "Ebooks | Fuel to Function by Ana Yepez", "retos": "Retos de 30, 65 y 120 días | Fuel to Function by Ana Yepez", "planes": "Planes nutricionales | Fuel to Function by Ana Yepez", "tienda": "Tienda | Fuel to Function by Ana Yepez", "ana": "Sobre Ana Yepez | Fuel to Function", "agenda": "Agenda tu consulta | Fuel to Function by Ana Yepez"};
+  var TYPE_VIEW={ebook:"ebooks",reto:"tienda",plan:"planes"};
   var filter="all",cart=[],nextId=100;
   var $=function(id){return document.getElementById(id)};
   var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
@@ -711,17 +1371,17 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
   var soon=function(p){return p.price===null||p.price===undefined};
 
   function card(p){
-    var inCart=cart.indexOf(p.id)>-1,style=p.img?' style="background-image:url('+p.img+')"':"";
+    var inCart=cart.indexOf(String(p.id))>-1,style=p.img?' style="background-image:url('+p.img+')"':"";
     return '<article class="prod">'+
       '<div class="cv '+p.type+(p.img?" has-img":"")+'"'+style+'><span class="ba">Fuel to Function · '+CATS[p.type]+'</span><span class="bt">'+esc(p.title)+'</span><span class="ba">'+esc(p.spec||"")+'</span>'+
         (soon(p)?'<span class="oct" aria-hidden="true"><span><small>Muy</small>pronto</span></span>':'')+'</div>'+
       '<div class="info"><span class="n">'+esc(p.title)+'</span><span class="bar"></span>'+
         '<div class="r"><span>Tipo</span><span>'+CATS[p.type]+'</span></div>'+
-        '<div class="price">'+(soon(p)?'<b class="soon">Próximamente</b><a class="add" href="/agenda/">Avísame</a>':'<b>'+fmt(p.price)+'</b><button type="button" class="add'+(inCart?" done":"")+'" data-add="'+p.id+'">'+(inCart?"En tu carrito":"Agregar")+'</button>')+'</div>'+
+        '<div class="price">'+(soon(p)?'<b class="soon">Próximamente</b><a class="add" href="https://wa.me/'+WA+'?text='+encodeURIComponent("Hola Ana, avísame cuando salga "+p.title+".")+'" target="_blank" rel="noopener">Avísame</a>':'<b>'+fmt(p.price)+'</b><button type="button" class="add'+(inCart?" done":"")+'" data-add="'+esc(p.id)+'">'+(inCart?"En tu carrito":"Agregar")+'</button>')+'</div>'+
       '</div></article>';
   }
   function listFor(k){return k==="all"?products.filter(function(p){return filter==="all"||p.type===filter}):products.filter(function(p){return p.type===k})}
-  function renderFilters(){if(!$("filters"))return;
+  function renderFilters(){
     var o=[["all","Todo"],["ebook","Ebooks"],["reto","Retos"],["plan","Planes"]];
     $("filters").innerHTML=o.map(function(x){var n=x[0]==="all"?products.length:products.filter(function(p){return p.type===x[0]}).length;
       return '<button type="button" class="chip" data-f="'+x[0]+'" aria-pressed="'+(filter===x[0])+'">'+x[1]+'<span class="c">'+n+'</span></button>'}).join("");
@@ -733,29 +1393,37 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
   }
   function renderCart(){
     $("cartCount").textContent=cart.length;
-    var items=cart.map(function(id){return products.filter(function(p){return p.id===id})[0]}).filter(Boolean);
-    $("cartList").innerHTML=items.length?items.map(function(p){return '<li><div><div style="font-weight:700">'+esc(p.title)+'</div><button type="button" data-rm="'+p.id+'">Quitar</button></div><span>'+fmt(p.price)+' MXN</span></li>'}).join(""):'<li class="empty-c">Aún no agregas nada.</li>';
+    var items=cart.map(function(id){return products.filter(function(p){return String(p.id)===id})[0]}).filter(Boolean);
+    $("cartList").innerHTML=items.length?items.map(function(p){return '<li><div><div style="font-weight:700">'+esc(p.title)+'</div><button type="button" data-rm="'+esc(p.id)+'">Quitar</button></div><span>'+fmt(p.price)+' MXN</span></li>'}).join(""):'<li class="empty-c">Aún no agregas nada.</li>';
     $("cartTotal").textContent=fmt(items.reduce(function(s,p){return s+Number(p.price)},0))+" MXN";
   }
   function all(){renderFilters();renderGrids();renderCart()}
+  // Contenido que el panel de Ana guarda en Firestore (lo aplica js/sitio-datos.js; sin él queda lo de arriba)
+  var WA="529982225771";
+  window.FTF={
+    setProducts:function(list){products=list;cart=cart.filter(function(id){return list.some(function(p){return String(p.id)===id})});if(!list.some(function(p){return filter===p.type}))filter="all";all()},
+    getProducts:function(){return products.slice()},
+    setWhatsapp:function(n){WA="52"+n;renderGrids()}
+  };
 
   function route(){
-    var v=window.FTF_PAGE||"inicio";
+    var v=(location.hash||"").replace("#","");if(VIEWS.indexOf(v)<0)v="inicio";
     $$("main[data-view]").forEach(function(m){m.hidden=m.dataset.view!==v});
     $$("nav.links a, .mnav ul a").forEach(function(a){if(a.getAttribute("href")==="#"+v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
-    closeMenu();
+    closeMenu();window.scrollTo(0,0);document.title=TITLES[v];
   }
-  
+  window.addEventListener("hashchange",route);
   function openMenu(){$("mnav").hidden=false;$("openMenu").setAttribute("aria-expanded","true")}
   function closeMenu(){$("mnav").hidden=true;$("openMenu").setAttribute("aria-expanded","false")}
   $("openMenu").addEventListener("click",openMenu);
   $("closeMenu").addEventListener("click",closeMenu);
   $("mnav").addEventListener("click",function(e){var a=e.target.closest("a");if(a&&a.getAttribute("href")===(location.hash||"#inicio"))closeMenu()});
 
-  $("filters")&&$("filters").addEventListener("click",function(e){var b=e.target.closest("[data-f]");if(!b)return;filter=b.dataset.f;renderFilters();renderGrids()});
+  $("filters").addEventListener("click",function(e){var b=e.target.closest("[data-f]");if(!b)return;filter=b.dataset.f;renderFilters();renderGrids()});
   document.addEventListener("click",function(e){
-    var b=e.target.closest("[data-add]");if(b){var id=+b.dataset.add;if(cart.indexOf(id)<0)cart.push(id);renderGrids();renderCart();openCart();return}
-    var r=e.target.closest("[data-rm]");if(r){var rid=+r.dataset.rm;cart=cart.filter(function(x){return x!==rid});renderGrids();renderCart();return}
+    var j=e.target.closest("[data-scroll]");if(j){var t=$(j.dataset.scroll);if(t){e.preventDefault();t.scrollIntoView({behavior:window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"start"})}return}
+    var b=e.target.closest("[data-add]");if(b){var id=b.dataset.add;if(cart.indexOf(id)<0)cart.push(id);renderGrids();renderCart();openCart();return}
+    var r=e.target.closest("[data-rm]");if(r){var rid=r.dataset.rm;cart=cart.filter(function(x){return x!==rid});renderGrids();renderCart();return}
     var c=e.target.closest("[data-copy]");if(c){var t=c.dataset.copy;try{navigator.clipboard.writeText(t).then(function(){c.textContent="Copiado"},function(){sel(c)})}catch(_){sel(c)}}
   });
   function sel(btn){var v=btn.closest(".cbox").querySelector(".v"),r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r)}
@@ -765,25 +1433,15 @@ aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);backgro
   document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeCart();closeMenu()}});
   $("checkout").addEventListener("click",function(){$("checkoutNote").textContent=cart.length?"Demo: aquí se abre el pago (Shopify, Stripe o Mercado Pago) y el cliente recibe sus archivos por correo.":"Agrega un producto para continuar."});
 
-  if($("upForm")){var coverData=null;
-  $("fCover").addEventListener("change",function(){var f=this.files[0];if(!f)return;$("coverName").textContent=f.name;var r=new FileReader();r.onload=function(){coverData=r.result};r.readAsDataURL(f)});
-  $("fFile").addEventListener("change",function(){var f=this.files[0];if(f)$("fileName").textContent=f.name});
-  $("upForm").addEventListener("submit",function(e){
-    e.preventDefault();var t=$("fTitle").value.trim(),price=$("fPrice").value;
-    if(!t){$("toast").textContent="Falta el nombre del producto.";return}
-    var type=$("fType").value;
-    products.unshift({id:nextId++,type:type,title:t,spec:$("fSpec").value.trim(),price:price===""?null:Math.max(0,Math.round(+price)),img:coverData});
-    filter="all";all();$("toast").textContent="Publicado en la tienda.";
-    this.reset();coverData=null;$("coverName").textContent="Portada (JPG o PNG)";$("fileName").textContent="Archivo a vender (PDF)";
-    location.href="/"+TYPE_VIEW[type]+"/";
-  });
-
-  }
   // barcode from the Instagram handle
   (function(){var c=$("bc");if(!c||!c.getContext)return;var x=c.getContext("2d"),s="nut.anayepez",bars=[],seed=7;
     for(var i=0;i<s.length;i++){seed=(seed*31+s.charCodeAt(i))%9973;for(var k=0;k<4;k++)bars.push(1+((seed>>k)&3))}
     var total=bars.reduce(function(a,b){return a+b},0)+bars.length*2,u=c.width/total,px=0;x.fillStyle="#22304A";
     bars.forEach(function(b,i){if(i%2===0)x.fillRect(Math.round(px),0,Math.max(2,Math.round(b*u)),c.height);px+=(b+2)*u})})();
+
+  // habit tracker del reto de 30 días: las marcas se quedan en este navegador
+  (function(){var K="ftf-tracker-30",st={};try{st=JSON.parse(localStorage.getItem(K)||"{}")}catch(_){}
+    $$("[data-track]").forEach(function(c){c.checked=!!st[c.dataset.track];c.addEventListener("change",function(){if(c.checked)st[c.dataset.track]=1;else delete st[c.dataset.track];try{localStorage.setItem(K,JSON.stringify(st))}catch(_){}})})})();
 
   all();route();
 })();
